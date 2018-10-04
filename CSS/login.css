@@ -1,0 +1,34 @@
+.loginform{
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: #dfdfdf;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.30);
+}
+.loginform:hover{
+    background-color: #dfdfda;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url("../Images/login/background.jpg");
+}
+form{
+    padding: 10px;
+}
+
+input{
+    margin: 5px;
+    padding: 10px;
+    
+}
+label{
+    padding: 5px;
+    
+}
+h2{
+    padding: 5px;
+    color: darkred;
+}
