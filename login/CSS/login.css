@@ -13,7 +13,7 @@
 body{
     display: flex;
     justify-content: center;
-    background-image: url("../Images/login/background.jpg");
+    background-image: url("../Images/background.jpg");
 }
 form{
     padding: 10px;
