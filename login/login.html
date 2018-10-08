@@ -1,20 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Log in</title>
-        <link href="CSS/login.css" type="text/css" rel="stylesheet" />
+        <title>log in</title>
+
+        <link href="./CSS/login-style.css" type="text/css" rel="stylesheet"/>
     </head>
 
     <body>
-        <div class="loginform">
-            <form action = "index.php" >
-                <h2>Log in</h2>
-                <label><b>UserName</b></label><br />
-                <input class="textfeild" type="text" value="" name="username"/><br />
-                <label><b>Password</b></label><br />
-                <input class="textfeild" type="password" value="" name="password"/><br />
-                <input type="submit" name="submit"/>
-            </form>
-            
+        <div class="outer-box">
+            <div class="middle">
+                <div class="inner-box">
+                    <div class="heading">
+                        <h2>Log in</h2>
+                    </div>
+                    <div class="form-box">
+                        <div class="input-form">
+                            <p>Username</p>
+                            <input type="text" name="username" />
+                    
+                        </div>
+                    <div class="input-form">
+                        <p>Password</p>
+                        <input type="password" name="password" />
+                        
+                    </div>
+
+                    <div class="submit-btn">
+                        <input class="submit" type="submit" name="submit" value="login"/>
+                    </div>
+                    <footer class="footer">
+                        <p class=""><a href="#">Forgot password?</a></p>
+                    </footer>
+                </div>
+            </div>
+            </div>
         </div>
         
     </body>
