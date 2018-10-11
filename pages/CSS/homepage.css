@@ -1,0 +1,46 @@
+.header-content{
+    text-align: center;
+}
+.header p{
+    font-size: 25px;
+    padding: 10px;
+}
+.navigation{
+    width: 100%;
+
+}
+img{
+    height: 300px;
+}
+.footer-text{
+    font-size: 16px;
+    margin-top:0px;
+}
+footer{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+.footer-logo-text{
+    padding: 5px;
+    margin-left: 5px;
+    width: 60px;
+}
+row{
+    color: rgb(224, 224, 224);
+}
+.footer-link{
+    color: white;
+}
+.footer-link:hover{
+    color: rgb(177, 177, 177);
+}
+.copyright-content{
+    background-color: rgb(141, 141, 141);
+}
+.copyright-content p{
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(219, 225, 231);
+}
