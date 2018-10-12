@@ -11,27 +11,32 @@
     <title>Log in</title>
 </head>
 <body>
-    <div class="container-fluid ">
+    <div class="container-fluid" style="padding:0px;">
         <div class="outer">
-            <div class="middle">
-                <div class="inner">
-                    <h3>log in</h3>
-                    <p>Welcome to the community.</p>
+                <div class="middle">
+                    <div class="card">
+                        <h2 class="text-danger">Log In</h2>
                         <form action="login.html" method="POST">
-                            <p>username</p>
-                            <input type="text" name="username" />
-                            <p>password</p>
-                            <input type="password" name="password"/> 
-                            <div class="button">
-                                <input class="btn btn-danger" type="submit" name="login" value="log in"/>
+                            <div class="form-group">
+                                <label for="usrname">username</label>
+                                <input class="form-control" id="usrname" type="text" name="username" placeholder="username"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">password</label>
+                                <input class="form-control" id="pwd" type="text" name="password" placeholder="password"/>
+                            </div>
+                            <button type="submit" class="btn btn-danger">log in</button>
+                            <div class="footer">
+                                <a class="footer-link" href="#">forgot password ?</a>
                             </div>
                         </form>
-                        <p><a style="font-size:16px;" href="#">forgot password?</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
+
+    
     
 </body>
 </html>

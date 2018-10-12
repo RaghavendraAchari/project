@@ -7,10 +7,11 @@
 }
 .navigation{
     width: 100%;
-
 }
-img{
-    height: 300px;
+#home-options .card{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0px;
 }
 .footer-text{
     font-size: 16px;
@@ -26,9 +27,6 @@ footer{
     margin-left: 5px;
     width: 60px;
 }
-row{
-    color: rgb(224, 224, 224);
-}
 .footer-link{
     color: white;
 }
@@ -36,11 +34,22 @@ row{
     color: rgb(177, 177, 177);
 }
 .copyright-content{
-    background-color: rgb(141, 141, 141);
+    background-color: rgba(141, 141, 141, 0.685);
 }
 .copyright-content p{
     padding: 8px;
     text-align: center;
     font-size: 18px;
     color: rgb(219, 225, 231);
+}
+.card{
+    border-radius: 0rem;
+}
+.card-body{
+    margin: 0px;
+
+}
+.card:hover{
+    box-shadow: 3px 3px 8px #636363;
+    transition-duration: .1s;
 }

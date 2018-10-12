@@ -8,36 +8,33 @@
     <link rel="stylesheet" href="./CSS/homepage.css"/>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-    <title>Document</title>
+    <title>WS:Working Solutions :Book and rent workshops</title>
 </head>
 <body>
-    <div class="container-fluid">
-            <div>
-                    
-            </div>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid" style="padding:0px;margin: 0px;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
             <a class="navbar-brand" href="homepage.html"><h1>WS</h1></a>
             <div class="navigation">
                 <ul class="navbar-nav justify-content-end">
                     <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#2">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookpage.html">Book</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#4">Log in</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="login.html">Log in</a></li>
                 </ul>
             </div>
             
         </nav>
-        <header class="header bg-light">
+        <header class="jumbotron">
             <div class="header-content">
                 <h1 class="display-3" >Welcome to Working Solutions</h1>
-                <h2 class="display-4">Your work is our PRIORITY</h2>
-                <h2 class="display-4" >One platform to book or manage your WORKSHOPS</h2>
-                <p>Get workshop on your desired time.This is the one place to book workshops to complete your works</p>
+                <h2 class="display-4 bg-light">Your work is our PRIORITY</h2>
+                <h2 class="display-4"  style="padding:5px;">One platform to book or manage your WORKSHOPS</h2>
+                <p class="bg-light">Get workshop on your desired time.This is the one place to book workshops to complete your works</p>
             </div>
         </header>
 
         
-        <div class="card-deck" style="margin-bottom : 15px;" >
+        <div id="home-options" class="card-deck" style="margin-bottom : 15px; margin-left: 10px;margin-right: 10px;" >
             <div class="card bg-light" >
                 <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
 
@@ -56,18 +53,29 @@
                     <h2 class="card-title">Book</h2>
                     <p class="card-text">book workshop from our tons of workshop</p>
                 </div>
-                <div class="card-footer"><a class="card-link btn btn-secondary" href="#5">Book Now</a></div>  
+                <div class="card-footer"><a class="card-link btn btn-secondary" href="bookpage.html">Book Now</a></div>  
             </div>
             <div class="card bg-light" >
                 <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
 
                 
                 <div class="card-body">
-                    <h2 class="card-title">Log in</h2>
-                    <p class="card-text">View your booking history and many more.</p>
+                    <h2 class="card-title">Rent</h2>
+                    <p class="card-text">Rent your workshop through our platform and enjoy earnings...</p>
                 </div>
-                <div class="card-footer"><a class="card-link btn btn-secondary" href="#6">History</a></div>
+                <div class="card-footer"><a class="card-link btn btn-secondary" href="#6">Rent</a></div>
             </div>
+
+            <div class="card bg-light" >
+                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+    
+                    
+                    <div class="card-body">
+                        <h2 class="card-title">Log in</h2>
+                        <p class="card-text">View your booking history and many more.</p>
+                    </div>
+                    <div class="card-footer"><a class="card-link btn btn-secondary" href="#6">History</a></div>
+                </div>
         </div>
 
         <footer class="footer bg-secondary">
@@ -75,7 +83,7 @@
                 <div class="col-sm-4">
                     <h2 class="footer-logo-text bg-light">WS</h2>
                     <h4 style="margin-bottom:0px; padding: 5px;">Working Solutions</h4>
-                    <p style="font-size: 19px; padding:5px;">Your work is our priority</p>
+                    <p style="font-size: 19px; padding:5px;color: white;">Your work is our priority</p>
                     
                 </div>
                 <div class="col-sm-4">
