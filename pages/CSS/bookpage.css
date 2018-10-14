@@ -1,6 +1,8 @@
-.navigation{
-    width: 100%;
+.accordion-container{
+    
+    border-right: 1px solid rgba(0, 0, 0, 0.74);
+    box-shadow : 0px 0px 1px #000000;
 }
-aside{
-    width: 200px;
+.form-check-label{
+    display: block;
 }

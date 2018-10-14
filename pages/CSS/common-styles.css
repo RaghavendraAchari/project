@@ -1,0 +1,36 @@
+.container-fluid{
+    padding:0px;
+    margin: 0px;
+}
+.navigation{
+    width: 100%;
+}
+.footer-text{
+    font-size: 16px;
+    margin-top:0px;
+}
+footer{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+.footer-logo-text{
+    padding: 5px;
+    margin-left: 5px;
+    width: 60px;
+}
+.footer-link{
+    color: white;
+}
+.footer-link:hover{
+    color: rgb(177, 177, 177);
+}
+.copyright-content{
+    background-color: rgba(141, 141, 141, 0.685);
+}
+.copyright-content p{
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(219, 225, 231);
+}

@@ -1,0 +1,25 @@
+.form-group.basic{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form-group.basic:hover{
+    box-shadow: 1px 1px 3px rgba(112, 111, 111, 0.747);
+}
+.form-group.basic:focus-within{
+    box-shadow: 1px 1px 3px rgba(112, 111, 111, 0.747);
+}
+.basic-address{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    padding-right: 5px;
+}
+.card{
+    margin: 15px;
+    padding:10px; 
+}
+.form-inline{
+    padding: 10px;
+}

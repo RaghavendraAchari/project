@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./CSS/common-styles.css"/>
     <link rel="stylesheet" href="./CSS/homepage.css"/>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/bootstrapcdn.min.js"></script>
 
-    <title>WS:Working Solutions :Book and rent workshops</title>
+    <title>WS: Working Solutions :Book and rent workshops</title>
 </head>
 <body>
-    <div class="container-fluid" style="padding:0px;margin: 0px;">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark" >
             <a class="navbar-brand" href="homepage.html"><h1>WS</h1></a>
             <div class="navigation">
                 <ul class="navbar-nav justify-content-end">
-                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search-page.html">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookpage.html">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="user-register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rent-page.html">Rent</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
                     <li class="nav-item dropdown"><a class="nav-link" href="login.html">Log in</a></li>
                 </ul>
@@ -33,53 +38,53 @@
             </div>
         </header>
 
-        
-        <div id="home-options" class="card-deck" style="margin-bottom : 15px; margin-left: 10px;margin-right: 10px;" >
-            <div class="card bg-light" >
-                <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
-
-                
-                <div class="card-body">
-                    <h2 class="card-title">Search</h2>
-                    <p class="card-text">Choose the most convenient workshop for you.</p>
-                </div>
-                <div class="card-footer"><a class="card-link btn btn-secondary" href="#4">Go To Search</a></div>
-            </div> 
-            <div class="card bg-light" >
-                <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
-
-                
-                <div class="card-body">
-                    <h2 class="card-title">Book</h2>
-                    <p class="card-text">book workshop from our tons of workshop</p>
-                </div>
-                <div class="card-footer"><a class="card-link btn btn-secondary" href="bookpage.html">Book Now</a></div>  
-            </div>
-            <div class="card bg-light" >
-                <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
-
-                
-                <div class="card-body">
-                    <h2 class="card-title">Rent</h2>
-                    <p class="card-text">Rent your workshop through our platform and enjoy earnings...</p>
-                </div>
-                <div class="card-footer"><a class="card-link btn btn-secondary" href="#6">Rent</a></div>
-            </div>
-
-            <div class="card bg-light" >
+        <div class="row">
+            <div class="col-lg-3 mb-3">
+                <div class="card h-100  bg-light" >
                     <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
-    
+                    <div class="card-body">
+                        <h2 class="card-title">Search</h2>
+                        <p class="card-text">Choose the most convenient workshop for you.</p>
+                    </div>
+                    <div class="card-footer"><a class="card-link btn btn-secondary" href="search-page.html">Go To Search</a></div>
+                </div> 
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="card h-100 bg-light" >
+                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+                    <div class="card-body">
+                        <h2 class="card-title">Book</h2>
+                        <p class="card-text">book workshop from our tons of workshop</p>
+                    </div>
+                    <div class="card-footer"><a class="card-link btn btn-secondary" href="bookpage.html">Book Now</a></div>  
+                </div>     
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="card h-100 bg-light" >
+                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+        
                     
+                    <div class="card-body">
+                        <h2 class="card-title">Rent</h2>
+                        <p class="card-text">Rent your workshop through our platform and enjoy earnings...</p>
+                    </div>
+                    <div class="card-footer"><a class="card-link btn btn-secondary" href="rent-page.html">Rent</a></div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3" >
+                <div class="card h-100 bg-light" >
+                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
                     <div class="card-body">
                         <h2 class="card-title">Log in</h2>
                         <p class="card-text">View your booking history and many more.</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-secondary" href="#6">History</a></div>
+                    <div class="card-footer"><a class="card-link btn btn-secondary" href="login.html">History</a></div>
                 </div>
+            </div>
         </div>
 
         <footer class="footer bg-secondary">
-            <div class="row">
+            <div class="row" style="width:100%;">
                 <div class="col-sm-4">
                     <h2 class="footer-logo-text bg-light">WS</h2>
                     <h4 style="margin-bottom:0px; padding: 5px;">Working Solutions</h4>
@@ -89,9 +94,11 @@
                 <div class="col-sm-4">
                     <h3 class="text-body">Links</h3>
                         <ul class="nav flex-column bg-secondary text-white">
-                            <li class="nav-item"><a class="nav-link footer-link" href="#7">Book</a></li>
-                            <li class="nav-item"><a class="nav-link footer-link" href="#8">Search</a></li>
-                            <li class="nav-item"><a class="nav-link footer-link" href="#9">Login</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="login.html">Login</a></li>
                         </ul>
                     
                 </div>

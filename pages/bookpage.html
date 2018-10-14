@@ -5,60 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="./CSS/bookpage.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./CSS/common-styles.css"/>
+    <link rel="stylesheet" href="./CSS/bookpage.css"/>
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/bootstrapcdn.min.js"></script>
     
   
     
-    <title>Book workshops asper your need</title>
+    <title>WS: Book workshops asper your need</title>
 </head>
 <body>
-    <div class="container-fluid" style="padding:0px;">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <a class="navbar-brand" href="homepage.html"><h1>WS</h1></a>
             <div class="navigation">
                 <ul class="navbar-nav justify-content-end">
                     <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookpage.html">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search-page.html">Search</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="bookpage.html">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="user-register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rent-page.html">Rent</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
                 </ul>
             </div>
         </nav>
-
-        <aside class="accordion" id="accordionCollapse">
-            <p>filter : </p>
-                <div class="card">
-                    <div class="card-header">
-                            <a class="card-link" data-toggle="collapse"  href="#collapseOne">
-                                    Collapse1
-                            </a>
-                    </div>
-                    <div class="collapse" id="collapseOne">
-                        <div class="card-body">
-                            <p>This is collapse 1...</p>
+        <div class="row m-3">
+            <div class="col-md-2 mb-3" >
+                <p>filter : </p>
+                    <div class="accordion" id="accordionCollapse" >
+                            
+                        <div class="card card-header">
+                            <a class="card-link" data-toggle="collapse"  href="#collapseOne">Date</a>
                         </div>
-                    </div>
-                    
-                </div>   
-                <div class="card">
-                    <div class="card-header">
-                    <a class="card-link" href="#collapseTwo" data-toggle="collapse" >
-                            Collapse2
-                    </a>                
+                        <div class="collapse" id="collapseOne" data-parent="#accordionCollapse">
+                            <div class="card card-body">
+                                <p>Choose a date :</p>
+                                <form>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input class="form-check-input" name="dateSelection" id="dateSelection" type="checkbox"> Monday</label>
+                                        <label class="form-check-label"><input class="form-check-input"  name="dateSelection" id="dateSelection" type="checkbox"> Tuesday</label>
+                                        <label class="form-check-label"><input class="form-check-input"  name="dateSelection" id="dateSelection" type="checkbox"> wednesday</label>
+                                        <label class="form-check-label"><input class="form-check-input"  name="dateSelection" id="dateSelection" type="checkbox"> Thursday</label>
+                                        <label class="form-check-label"><input class="form-check-input"  name="dateSelection" id="dateSelection" type="checkbox"> Friday</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="card card-header">
+                    <a class="card-link" href="#collapseTwo"  data-toggle="collapse" >Time</a>                
                     </div>    
-                    <div id="collapseTwo" class="collapse">
-                            <div class="card-body">
-                                This is collapse 2...
+                    <div id="collapseTwo" class="collapse" data-parent="#accordionCollapse">
+                            <div class="card card-body">
+                                <p>Choose a Time :</p>
+                                <form>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label"><input  name="timeSelection" id="timeSelection" type="checkbox"/> 9am - 11am</label>
+                                        <label class="form-check-label"><input  name="timeSelection" id="timeSelection" type="checkbox"/> 11am - 1pm</label>
+                                        <label class="form-check-label"><input  name="timeSelection" id="timeSelection" type="checkbox"/> 1pm - 3pm</label>
+                                        <label class="form-check-label"><input  name="timeSelection" id="timeSelection" type="checkbox"/> 3pm - 5pm</label>
+                                        <label class="form-check-label"><input  name="timeSelection" id="timeSelection" type="checkbox"/> 5pm - 7pm</label>
+                                    </div>
+                                </form>
                             </div>
                     </div>   
-                </div>        
-                
-        </aside>
+                           
+                    
+            </div>
+            <div class="card col-md-10 mb-3">
 
+            </div>
+        </div>
+        
+        <footer class="footer bg-secondary">
+                <div class="row" style="width:100%;">
+                    <div class="col-sm-4">
+                        <h2 class="footer-logo-text bg-light">WS</h2>
+                        <h4 style="margin-bottom:0px; padding: 5px;">Working Solutions</h4>
+                        <p style="font-size: 19px; padding:5px;color: white;">Your work is our priority</p>
+                        
+                    </div>
+                    <div class="col-sm-4">
+                        <h3 class="text-body">Links</h3>
+                            <ul class="nav flex-column bg-secondary text-white">
+                                <li class="nav-item"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
+                                <li class="nav-item"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
+                                <li class="nav-item"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
+                                <li class="nav-item"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
+                                <li class="nav-item"><a class="nav-link footer-link" href="login.html">Login</a></li>
+                            </ul>
+                        
+                    </div>
+                    <div class="col-sm-4 text-body">
+                        <h3 id="about-us">About us</h3>
+                        <h4 style="margin-bottom:0px;">Working Solutions</h4>
+                        <p class="footer-text"><pre class="text-white">Raghavendra & Ramesh
+#123/1, food Street, 2nd stage,
+Rajajinagar, Bangalore - 560001
+                           </pre></p>
+                    </div>
+                </div>
+                <div class="copyright-content">
+                    <p>copyright 2018. All rights reserved. Working Solutions.</p>
+                </div>
+            </footer>
     </div>
 
 </body>
