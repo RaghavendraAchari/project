@@ -21,7 +21,7 @@
     box-shadow: 1px 1px 2px #636363;
     transition-duration: .1s;
 }
-.row{
+.row.deck{
     width : 100%; 
     padding: 10px;
     margin: 0px;
@@ -30,4 +30,7 @@
     min-height: 100%;
     padding-left: 3rem;
     padding-right: 3rem;
+}
+.card-img-top{
+    border-radius: 0rem;
 }

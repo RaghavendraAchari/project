@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./CSS/common-styles.css"/>
     <link rel="stylesheet" href="./CSS/homepage.css"/>
+    <link rel="stylesheet" href="./CSS/common-styles.css"/>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/bootstrapcdn.min.js"></script>
 
     <title>WS: Working Solutions :Book and rent workshops</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark" >
+    <nav class="navbar navbar-expand-md navbar-dark" style="background:rgb(24, 43, 63);">
             <a class="navbar-brand" href="homepage.html"><h1>WS</h1></a>
             <div class="navigation">
                 <ul class="navbar-nav justify-content-end">
-                    <li class="nav-item active"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="homepage.html" onclick="" >Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="search-page.html">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookpage.html">Book</a></li>
                     <li class="nav-item"><a class="nav-link" href="user-register.html">Register</a></li>
@@ -28,7 +27,9 @@
                 </ul>
             </div>
             
-        </nav>
+    </nav>
+
+    <div class="container-fluid">
         <header class="jumbotron">
             <div class="header-content">
                 <h1 class="display-3" >Welcome to Working Solutions</h1>
@@ -38,84 +39,90 @@
             </div>
         </header>
 
-        <div class="row">
-            <div class="col-lg-3 mb-3">
+        <div class="row deck bg-light mt-3 mb-3">
+            <div class="col-lg-3">
                 <div class="card h-100  bg-light" >
-                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+                    <img class="card-img-top"  src="./Icons/search-icon4.png" alt="card-image"/>
                     <div class="card-body">
                         <h2 class="card-title">Search</h2>
                         <p class="card-text">Choose the most convenient workshop for you.</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-secondary" href="search-page.html">Go To Search</a></div>
+                    <div class="card-footer"><a class="card-link btn btn-info text-white" href="search-page.html">Go To Search</a></div>
                 </div> 
             </div>
-            <div class="col-lg-3 mb-3">
+            <div class="col-lg-3">
                 <div class="card h-100 bg-light" >
-                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+                    <img class="card-img-top"  src="./Icons/book-icon2.png" alt="card-image"/>
                     <div class="card-body">
                         <h2 class="card-title">Book</h2>
                         <p class="card-text">book workshop from our tons of workshop</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-secondary" href="bookpage.html">Book Now</a></div>  
+                    <div class="card-footer"><a class="card-link btn btn-info" href="bookpage.html">Book Now</a></div>  
                 </div>     
             </div>
-            <div class="col-lg-3 mb-3">
+            <div class="col-lg-3">
                 <div class="card h-100 bg-light" >
-                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+                    <img class="card-img-top"  src="./Icons/rent-icon2.png" alt="card-image"/>
         
                     
                     <div class="card-body">
                         <h2 class="card-title">Rent</h2>
                         <p class="card-text">Rent your workshop through our platform and enjoy earnings...</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-secondary" href="rent-page.html">Rent</a></div>
+                    <div class="card-footer"><a class="card-link btn btn-info" href="rent-page.html">Rent</a></div>
                 </div>
             </div>
-            <div class="col-lg-3 mb-3" >
+            <div class="col-lg-3" >
                 <div class="card h-100 bg-light" >
-                    <img class="card-img-top"  src="./Images/card-image.png" alt="card-image"/>
+                    <img class="card-img-top"  src="./Icons/user-login-icon2.png" alt="card-image"/>
                     <div class="card-body">
                         <h2 class="card-title">Log in</h2>
                         <p class="card-text">View your booking history and many more.</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-secondary" href="login.html">History</a></div>
+                    <div class="card-footer"><a class="card-link btn btn-info" href="login.html">History</a></div>
                 </div>
             </div>
         </div>
-
-        <footer class="footer bg-secondary">
-            <div class="row" style="width:100%;">
-                <div class="col-sm-4">
-                    <h2 class="footer-logo-text bg-light">WS</h2>
-                    <h4 style="margin-bottom:0px; padding: 5px;">Working Solutions</h4>
-                    <p style="font-size: 19px; padding:5px;color: white;">Your work is our priority</p>
+    </div>
+    <footer class="pt-3" style="background:rgb(44, 62, 80);">
+        <div class="container-fluid">
+                <div class="row pt-3">
+                        <div class="col-sm-4">
+                            <h2 class="footer-logo-text bg-light">WS</h2>
+                            <h4 class=" text-white">Working Solutions</h4>
+                            <p class="footer-text  text-white">Your work is our priority</p>
+                            
+                        </div>
+                        <div class="col-sm-4">
+                            <h3 class="text-white">Links</h3>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
+                                    <li class="nav-item p-0  m-0"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
+                                    <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
+                                    <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
+                                    <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="login.html">Login</a></li>
+                                </ul>
+                            
+                        </div>
+                        <div class="col-sm-4">
+                            <h3 id="about-us"class="text-white">About us</h3>
+                            <h4 class="mb-3 text-white">Working Solutions</h4>
+                            
+                            <p class="text-white mb-0">Raghavendra & Ramesh</p>
+                            <p class="text-white mb-0">#123/1, food Street, 2nd stage,</p>
+                            <p class="text-white mb-0">Rajajinagar, Bangalore - 560001</p>
+                            
+                        </div>
+                    </div>
                     
-                </div>
-                <div class="col-sm-4">
-                    <h3 class="text-body">Links</h3>
-                        <ul class="nav flex-column bg-secondary text-white">
-                            <li class="nav-item"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
-                            <li class="nav-item"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
-                            <li class="nav-item"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
-                            <li class="nav-item"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
-                            <li class="nav-item"><a class="nav-link footer-link" href="login.html">Login</a></li>
-                        </ul>
-                    
-                </div>
-                <div class="col-sm-4 text-body">
-                    <h3 id="about-us">About us</h3>
-                    <h4 style="margin-bottom:0px;">Working Solutions</h4>
-                    <p class="footer-text"><pre class="text-white">Raghavendra & Ramesh
-#123/1, food Street, 2nd stage,
-Rajajinagar, Bangalore - 560001
-                       </pre></p>
-                </div>
-            </div>
-            <div class="copyright-content">
+        </div>
+        <div class="copyright-content" style="background:rgb(24, 43, 63);">
                 <p>copyright 2018. All rights reserved. Working Solutions.</p>
             </div>
-        </footer>
-        
-    </div>
+    </footer>
+
+    
 </body>
 </html>
+
+

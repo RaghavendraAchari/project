@@ -4,12 +4,6 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-.form-group.basic:hover{
-    box-shadow: 1px 1px 3px rgba(112, 111, 111, 0.747);
-}
-.form-group.basic:focus-within{
-    box-shadow: 1px 1px 3px rgba(112, 111, 111, 0.747);
-}
 .basic-address{
     padding-top: 10px;
     padding-bottom: 10px;

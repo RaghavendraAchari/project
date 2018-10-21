@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./CSS/common-styles.css"/>
     <link rel="stylesheet" href="./CSS/search-page.css"/>
+    <link rel="stylesheet" href="./CSS/common-styles.css"/>
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/bootstrapcdn.min.js"></script>
@@ -16,8 +16,7 @@
     <title>WS: Search workshop for your need</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark">
             <a class="navbar-brand" href="homepage.html"><h1>WS</h1></a>
             <div class="navigation">
                 <ul class="navbar-nav justify-content-end">
@@ -31,7 +30,7 @@
                 </ul>
             </div>
         </nav>
-
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline" action="#">
                 <label for="searchbar mr-sm-2">Search : </label>
@@ -40,42 +39,58 @@
             </form>
         </nav>
 
-        <div class="card" style="height:100px; padding :5px;">
+        <div class="card mb-3" id="search-window" style="height:100px; padding :5px;">
 
         </div>
-
-        <footer class="footer bg-secondary">
-                <div class="row" style="width:100%;">
-                    <div class="col-sm-4">
-                        <h2 class="footer-logo-text bg-light">WS</h2>
-                        <h4 style="margin-bottom:0px; padding: 5px;">Working Solutions</h4>
-                        <p style="font-size: 19px; padding:5px;color: white;">Your work is our priority</p>
+    </div>
+    <footer class="pt-3" style="background:rgb(44, 62, 80);">
+            <div class="container-fluid">
+                    <div class="row pt-3">
+                            <div class="col-sm-4">
+                                <h2 class="footer-logo-text bg-light">WS</h2>
+                                <h4 class=" text-white">Working Solutions</h4>
+                                <p class="footer-text  text-white">Your work is our priority</p>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <h3 class="text-white">Links</h3>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
+                                        <li class="nav-item p-0  m-0"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
+                                        <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
+                                        <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
+                                        <li class="nav-item p-0 m-0"><a class="nav-link footer-link" href="login.html">Login</a></li>
+                                    </ul>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <h3 id="about-us"class="text-white">About us</h3>
+                                <h4 class="mb-3 text-white">Working Solutions</h4>
+                                
+                                <p class="text-white mb-0">Raghavendra & Ramesh</p>
+                                <p class="text-white mb-0">#123/1, food Street, 2nd stage,</p>
+                                <p class="text-white mb-0">Rajajinagar, Bangalore - 560001</p>
+                                
+                            </div>
+                        </div>
                         
-                    </div>
-                    <div class="col-sm-4">
-                        <h3 class="text-body">Links</h3>
-                            <ul class="nav flex-column bg-secondary text-white">
-                                <li class="nav-item"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
-                                <li class="nav-item"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
-                                <li class="nav-item"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
-                                <li class="nav-item"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
-                                <li class="nav-item"><a class="nav-link footer-link" href="login.html">Login</a></li>
-                            </ul>
-                        
-                    </div>
-                    <div class="col-sm-4 text-body">
-                        <h3 id="about-us">About us</h3>
-                        <h4 style="margin-bottom:0px;">Working Solutions</h4>
-                        <p class="footer-text"><pre class="text-white">Raghavendra & Ramesh
-#123/1, food Street, 2nd stage,
-Rajajinagar, Bangalore - 560001
-                           </pre></p>
-                    </div>
-                </div>
-                <div class="copyright-content">
+            </div>
+            <div class="copyright-content" style="background:rgb(24, 43, 63);">
                     <p>copyright 2018. All rights reserved. Working Solutions.</p>
                 </div>
-            </footer>
-    </div>
+        </footer>
+
+        <script type="text/javascript">
+        
+            var request = new XMLHttpRequest();
+            request.open("GET",'searchPage.php');
+            request.send();
+
+            request.onreadystatechange = function(){
+                var container = document.getElementById('string')
+            };
+
+        </script>
+
 </body>
 </html>

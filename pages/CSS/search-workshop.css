@@ -1,0 +1,17 @@
+.result{
+    width: 100px;
+    height: 100px;
+}
+.card{
+    border-radius: 0rem;
+}
+.search-bar{
+    border-bottom: 1px solid rgb(158, 158, 158);
+}
+.card-text{
+    color: black;
+}
+#workshop-element:hover{
+    border: 1px solid rgb(158, 158, 158);
+    
+}
