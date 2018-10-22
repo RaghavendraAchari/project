@@ -1,34 +1,34 @@
 .navbar{
-    background:rgb(24, 43, 63);
+    background:rgb(24, 43, 63) ;
 }
 .navigation{
-    width: 100%;
+    width: 100% ;
 }
 footer{
-    background:rgb(44, 62, 80);
+    background:rgb(44, 62, 80) ;
 }
 .footer-text{
-    font-size: 16px;
-    margin-top:0px;
-    color : white;
+    font-size: 16px ;
+    margin-top:0px ;
+    color : white ;
 }
 .footer-logo-text{
-    padding: 5px;
-    margin-left: 5px;
-    width: 60px;
+    padding: 5px ;
+    margin-left: 5px ;
+    width: 60px ;
 }
 .footer-link{
-    color: white;
+    color: white ;
 }
 .footer-link:hover{
-    color: rgb(177, 177, 177);
+    color: rgb(177, 177, 177) ;
 }
 .copyright-content{
-    background-color: rgba(141, 141, 141, 0.685);
+    background-color: rgba(141, 141, 141, 0.685) ;
 }
 .copyright-content p{
-    padding: 8px;
-    text-align: center;
-    font-size: 18px;
-    color: rgb(219, 225, 231);
+    padding: 8px ;
+    text-align: center ;
+    font-size: 18px ;
+    color: rgb(219, 225, 231) ;
 }
