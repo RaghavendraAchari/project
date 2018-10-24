@@ -21,8 +21,9 @@
                 <?php 
                     $data->data_seek($rowno);
                     $indrow = $data->fetch_assoc();
+                    include("./Helpers/get-image.php");
                 ?>
-                <div class="card h-100" id="workshop-element" style="border-radius : 0rem;">
+                <div class="card h-100" id="workshop-element" style="border-radius : 0rem;  background-image : <?php echo $img; ?>">
                     <div class="card-header text-center">
                         <h4 class="card-title">
                             <?php echo $indrow['workshop_name']; ?>

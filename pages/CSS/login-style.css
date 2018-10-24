@@ -75,12 +75,13 @@ input[type=submit]{
     padding: 5px;
     border-radius: 5px;
 }
-.footer a{
+a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.658);
     opacity: .7;
 }
-.footer a:link{
+a:link{
     text-decoration: none;
     
 }
