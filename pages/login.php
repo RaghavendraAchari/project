@@ -11,9 +11,10 @@
                 <div class="inner-box">
                                 <?php 
                         
-                        if(isset($_POST["username"]) && isset($_POST["password"])){
+                        if(isset($_POST["username"]) && isset($_POST["pswd"])){
                             $user =$_POST["username"];
-                            $password = $_POST["password"];
+                            $pass =$_POST["pswd"];
+                            
                             require("Helpers/admin-details.php");
                             $mysqli = new mysqli($server, $username, $password,$dbname);
 
@@ -23,29 +24,33 @@
                                 die('Could not connect to '.$mysqli->connect_err());
                             }
                             //prepare statement
-                            $sql_statement = "SELECT * FROM user WHERE user_id='$user' AND user_password='$password'" ;
-                            
+                            $sql_statement = "SELECT * FROM user WHERE user_id='$user' AND user_password='$pass' " ;
                             $data = $mysqli->query($sql_statement);
-                            echo "next to sql ";
                             
-                                $data->data_seek(0);
-                                $row = $data->fetch_assoc();
-                                $user_id = $row["user_id"];
-                                echo "accepted ".$row["user_id"];
+                                if($data->num_rows==1){
+                                    $data->data_seek(0);
+                                    $row = $data->fetch_assoc();
+                                    $user_name = $row["user_fname"];
+                                    $user_id=$row["user_id"];
+                                    ?><div><h4>Log in success full..</h4>
+                                            <p>welcome : <?php echo $user_name; ?></p>
+                                            <a href="./home.php?user=<?php echo $user_id; ?>" >Continue..</a>
+                                        </div><?php
+                                }
                         }else {
                             ?>
-                            <form action="login.php" method="post">
+                            <form action="login.php" method="POST">
                                 <div class="heading">
                                     <h2>Log in</h2>
                                 </div>
                                 <div class="form-box">
                                     <div class="input-form">
                                         <p>Username</p>
-                                        <input type="text" name="username" />
+                                        <input type="text" name="username" placeholder="Username" />
                                     </div>
                                 <div class="input-form">
                                     <p>Password</p>
-                                    <input type="password" name="password" />
+                                    <input type="password" name="pswd" placeholder="Password" />
                                 </div>
         
                                 <div class="submit-btn">

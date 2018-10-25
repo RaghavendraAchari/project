@@ -95,7 +95,9 @@
         </div>
     </div>
 
-
+        <?php
+            mysqli_close($mysqli);
+        ?>
     <?php require("footer.php"); ?>
 </body>
 </html>

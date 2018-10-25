@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +9,36 @@
     <title>WS: Working Solutions :Book and rent workshops</title>
 </head>
 <body>
-<?php require("navigation.php"); ?>
+    <?php require("navigation.php"); ?>
+    <?php 
+    $given_user_id =null;
+    $user_name = null;
+    if(isset($_GET["user"])){
+        $given_user_id=$_GET["user"];
+        require("Helpers/admin-details.php");
+        $mysqli = new mysqli($server, $username, $password,$dbname);
+    
+    
+        //mysqli ob will have connect_errno != 0 if err occurs
+        if($mysqli->connect_errno){
+            die('Could not connect to '.$mysqli->connect_err());
+        }
+        //prepare statement
+        $sql_statement = "SELECT * FROM user WHERE user_id='$given_user_id'";
+
+        $result = $mysqli->query($sql_statement);
+        $result->data_seek(0);
+        $row = $result->fetch_assoc();
+        $user_name = $row["user_fname"];
+    }
+    ?>
     <script type="text/javascript">
         var ele = document.getElementById('home-link');
         ele.className +=' active';
+        <?php if($given_user_id != null && $user_name!= null){?>
+            var user = document.getElementById('login-link');
+            user.innerHTML = '<a id="login-text" class="nav-link" href="profile-page.php?user=<?php echo $given_user_id; ?>"><?php echo $user_name ;?></a>';
+        <?php } ?>
     </script>
 
     <div class="container-fluid">

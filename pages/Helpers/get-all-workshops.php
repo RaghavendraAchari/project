@@ -21,11 +21,11 @@
                 <?php 
                     $data->data_seek($rowno);
                     $indrow = $data->fetch_assoc();
-                    include("./Helpers/get-image.php");
+                    include("get-image.php");
                         
                 ?>
                 
-                <div class="card h-100" id="workshop-element" style="border-radius : 0rem ; background-image :url('<?php echo $img ; ?>');">
+                <div class="card h-100" id="workshop-element" style="border-radius : 0rem ; background :url('<?php echo $img ; ?>') content-box;">
                     <div class="card-header text-center">
                         <h4 class="card-title">
                             <?php echo $indrow['workshop_name']; ?>
