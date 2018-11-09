@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./CSS/common-styles.css"/>
+    <link rel="stylesheet" href="./CSS/rent-page.css"/>
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/bootstrapcdn.min.js"></script>
+    <title>WS: Rent your workshop</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="homepage.html"><h1>WS</h1></a>
+            <div class="navigation">
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search-page.html">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookpage.html">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="user-register.html">Register</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="rent-page.html">Rent</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="card">
+            <form  action="rent.php" method="POST">
+                <h2>Workshop Registration : </h2>
+
+                <div class="form-group basic">
+                    <h5 class="text-danger">Workshop Owner Info : </h5>
+                    <div class="form-inline">
+                            <label for="ownerid" class="mr-sm-2" >Workshop owner id : </label>
+                            <input type="text" class="form-control mb-2 mr-sm-4" id="ownername" name="ownername" placeholder="Enter Workshop owner id"/>
+                    </div>
+                </div>
+                <div class="form-group basic">
+                    <h5 class="text-danger">Workshop Info : </h5>
+                    <div class="form-inline">
+                            <label for="workshopname" class="mr-sm-2" >Workshop name : </label>
+                            <input type="text" class="form-control mb-2 mr-sm-4" id="workshopname" name="workshopname" placeholder="Enter Workshop name"/>
+                    </div>
+                </div>
+                <div class="form-group basic">
+                    <h5 class="text-danger">Workshop Contact Info : </h5>
+                    <div class="form-inline">
+                        <label for="details"  class="mr-sm-2" >E-mail : </label>
+                        <div class="input-group">
+                                <div class="input-group-prepend mb-2" >
+                                    <span class="input-group-text">@</span>
+                                </div>
+                            <input type="email" class="form-control mb-2 mr-sm-4" id="details" name="details" placeholder="Enter details"/>
+                        </div>
+                        <label for="Workshopphone" class="mr-sm-2" >Workshop Phone no : </label>
+                        <div class="input-group">
+                                <div class="input-group-prepend mb-2" >
+                                    <span class="input-group-text">+91</span>
+                                </div>
+                            <input type="text" class="form-control mb-2 mr-sm-4" id="Workshopphone" name="phone" placeholder="Enter workshop Phone number"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h5 class="text-danger">Workshop details : </h5>
+                    <div >
+                        <label for="description" class="mr-sm-2" >Description of Workshop : </label>
+                        <textarea type="text" cols="30" rows="10" class="form-control mb-2 mr-sm-4" id="description" name="description" placeholder="Describe your workshop..."></textarea>
+                    </div>
+                </div>
+
+            <input class="btn btn-secondary mr-sm-4" type="submit" value="submit" name="submit"/>
+            <input class="btn btn-secondary" type="reset" value="clear fields"/>
+            </form>
+        </div>
+
+        <footer class="footer bg-secondary">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2 class="footer-logo-text bg-light">WS</h2>
+                    <h4>Working Solutions</h4>
+                    <p class="footer-text">Your work is our priority</p>
+                    
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="text-body">Links</h3>
+                        <ul class="nav flex-column bg-secondary text-white">
+                            <li class="nav-item"><a class="nav-link footer-link" href="bookpage.html">Book</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="search-page.html">Search</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="user-register.html">Register</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="rent-page.html">Rent</a></li>
+                            <li class="nav-item"><a class="nav-link footer-link" href="login.html">Login</a></li>
+                        </ul>
+                    
+                </div>
+                <div class="col-sm-4 text-body">
+                    <h3 id="about-us">About us</h3>
+                    <h4 style="margin-bottom:0px;">Working Solutions</h4>
+                    <p class="footer-text"><pre class="text-white">Raghavendra & Ramesh
+#123/1, food Street, 2nd stage,
+Rajajinagar, Bangalore - 560001
+                       </pre></p>
+                </div>
+            </div>
+            <div class="copyright-content">
+                <p>copyright 2018. All rights reserved. Working Solutions.</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

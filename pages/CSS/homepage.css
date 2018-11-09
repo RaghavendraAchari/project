@@ -1,0 +1,36 @@
+.header-content{
+    text-align: center;
+}
+.header p{
+    font-size: 25px;
+    padding: 10px;
+}
+#home-options .card{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0px;
+    border-radius: 0rem;
+}
+.card{
+    border-radius: 0rem;
+}
+.card-body{
+    margin: 0px;
+}
+.card:hover{
+    box-shadow: 1px 1px 2px #636363;
+    transition-duration: .1s;
+}
+.row.deck{
+    width : 100%; 
+    padding: 10px;
+    margin: 0px;
+}
+.col-lg-3{
+    min-height: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.card-img-top{
+    border-radius: 0rem;
+}
