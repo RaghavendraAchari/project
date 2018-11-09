@@ -21,11 +21,11 @@
                     
                     <div class="col-sm-6 basic">
                         <label for="fname" class="mr-sm-2" >First name : </label>
-                                <input type="text" class="form-control mb-2 mr-sm-4" id="fname" name="fName" placeholder="Enter first name"/>
+                                <input type="text" class="form-control mb-2 mr-sm-4" id="fname" name="fname" placeholder="Enter first name"/>
                     </div>
                     <div class="col-sm-6 basic">
                         <label for="lname" class="mr-sm-2" >Last name : </label>
-                                <input type="text" class="form-control mb-2 mr-sm-4" id="lname" name="lName" placeholder="Enter last name"/>
+                                <input type="text" class="form-control mb-2 mr-sm-4" id="lname" name="lname" placeholder="Enter last name"/>
                     </div>
 
                     <div class="col-sm-12 basic">
@@ -61,7 +61,11 @@
                      
                      <div class="col-sm-6 basic">
                         <label for="userid" class="mr-sm-2" >User Id : </label>
-                        <input class="form-control mb-2 mr-sm-4" type="text" id="userid" placeholder="Enter user id" name="userid"/>
+                        <input class="form-control mb-2 mr-sm-4" type="text" id="userid" placeholder="Create a user id" name="userid"/>
+                    </div>
+                    <div class="col-sm-6 basic">
+                        <label for="password" class="mr-sm-2" >User Id : </label>
+                        <input class="form-control mb-2 mr-sm-4" type="password" id="password" placeholder="Create a password" name="password"/>
                     </div>
                     <div class="col-sm-12 btn-field">
                         <input class="btn btn-secondary mr-sm-4" type="submit" value="Submit" name="submit"/>

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,6 +16,8 @@
                         if(isset($_POST["username"]) && isset($_POST["pswd"])){
                             $user =$_POST["username"];
                             $pass =$_POST["pswd"];
+                             
+                             
                             
                             require("Helpers/admin-details.php");
                             $mysqli = new mysqli($server, $username, $password,$dbname);
@@ -30,11 +34,14 @@
                                 if($data->num_rows==1){
                                     $data->data_seek(0);
                                     $row = $data->fetch_assoc();
+
+                                    $_SESSION["user_fname"]=$row["user_fname"];
+                                    $_SESSION["user_id"]=$row["user_id"];
                                     $user_name = $row["user_fname"];
                                     $user_id=$row["user_id"];
                                     ?><div><h4>Log in success full..</h4>
                                             <p>welcome : <?php echo $user_name; ?></p>
-                                            <a href="./home.php?user=<?php echo $user_id; ?>" >Continue..</a>
+                                            <a href="./home.php" >Continue..</a>
                                         </div><?php
                                 }
                         }else {
@@ -46,11 +53,11 @@
                                 <div class="form-box">
                                     <div class="input-form">
                                         <p>Username</p>
-                                        <input type="text" name="username" placeholder="Username" />
+                                        <input type="text" name="username" />
                                     </div>
                                 <div class="input-form">
                                     <p>Password</p>
-                                    <input type="password" name="pswd" placeholder="Password" />
+                                    <input type="password" name="pswd" />
                                 </div>
         
                                 <div class="submit-btn">

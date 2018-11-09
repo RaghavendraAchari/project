@@ -25,7 +25,7 @@
                         
                 ?>
                 
-                <div class="card h-100" id="workshop-element" style="border-radius : 0rem ; background :url('<?php echo $img ; ?>') content-box;">
+                <div class="card h-100" id="workshop-element" style="border-radius : 0rem ; ">
                     <div class="card-header text-center">
                         <h4 class="card-title">
                             <?php echo $indrow['workshop_name']; ?>

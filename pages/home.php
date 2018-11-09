@@ -1,4 +1,13 @@
+<?php 
+session_start();
+    $user_id=null;
+    $user_fname=null;
+    if(isset($_SESSION["user_id"])){
+        $user_id=$_SESSION["user_id"];
+        $user_fname=$_SESSION["user_fname"];
+    }
 
+?>
 
 
 <!DOCTYPE html>
@@ -11,33 +20,14 @@
 <body>
     <?php require("navigation.php"); ?>
     <?php 
-    $given_user_id =null;
-    $user_name = null;
-    if(isset($_GET["user"])){
-        $given_user_id=$_GET["user"];
-        require("Helpers/admin-details.php");
-        $mysqli = new mysqli($server, $username, $password,$dbname);
     
-    
-        //mysqli ob will have connect_errno != 0 if err occurs
-        if($mysqli->connect_errno){
-            die('Could not connect to '.$mysqli->connect_err());
-        }
-        //prepare statement
-        $sql_statement = "SELECT * FROM user WHERE user_id='$given_user_id'";
-
-        $result = $mysqli->query($sql_statement);
-        $result->data_seek(0);
-        $row = $result->fetch_assoc();
-        $user_name = $row["user_fname"];
-    }
     ?>
     <script type="text/javascript">
         var ele = document.getElementById('home-link');
         ele.className +=' active';
-        <?php if($given_user_id != null && $user_name!= null){?>
+        <?php if($user_id != null && $user_fname!= null){?>
             var user = document.getElementById('login-link');
-            user.innerHTML = '<a id="login-text" class="nav-link" href="profile-page.php?user=<?php echo $given_user_id; ?>"><?php echo $user_name ;?></a>';
+            user.innerHTML = '<a id="login-text" class="nav-link" href="profile-page.php"><?php echo $user_fname ;?></a>';
         <?php } ?>
     </script>
 
@@ -88,16 +78,26 @@
                 <div class="card h-100 bg-light" >
                     <img class="card-img-top"  src="./Icons/user-login-icon2.png" alt="card-image"/>
                     <div class="card-body">
-                        <h2 class="card-title">Log in</h2>
+                        <h2 class="card-title"><?php echo $user_fname!=null ? $user_fname : "Log In" ; ?></h2>
                         <p class="card-text">View your booking history and many more.</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-info" href="login.php">History</a></div>
+                    <div class="card-footer"><a class="card-link btn btn-info" href="<?php echo $user_id!=null ?'user-history.php':'login.php'; ?>">History</a></div>
                 </div>
             </div>
         </div>
     </div>
 
     <?php require("footer.php"); ?>
-
+    	<?php if($user_id != null){ ?>
+    	
+    	<script type="text/javascript">
+    		var user = document.getElementById('footer-login-link');
+            user.innerHTML = '<a class="nav-link footer-link p-1 m-0" href="<?php echo $user_id!=null ? 'profile.php' : 'login.php' ?>"><?php echo $user_fname!=null ? $user_fname : 'Login' ?></a>';
+    	</script>
+    		
+    		
+    <?php	}
+    ?>
+	
 </body>
 </html>

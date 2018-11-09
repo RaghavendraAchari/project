@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +15,23 @@
         <div class="container-fluid">
 
             <div class="card">
-                <form  action="rent.php" method="POST">
+                <form  action="register-user-workshop.php" method="POST">
                     <h2 class="pb-2">Workshop Registration : </h2>
 
                     <div class="row m-0 form-group">
                         <div class="col-sm-12 heading"><h5 class="text-danger">Workshop Owner Info : </h5></div>
                         <div class="col-sm-6 basic">
                             <label for="ownerid" class="mr-sm-2" >Workshop owner id : </label>
-                            <input type="text" class="form-control mb-2 mr-sm-4" id="ownername" name="ownername" placeholder="Enter Workshop owner id"/>
+                            <input type="text" class="form-control mb-2 mr-sm-4" id="ownerid" name="ownerid" placeholder="Enter Workshop owner id"/>
                         </div>
                         <div class="col-sm-12 heading"><h5 class="text-danger">Workshop Info : </h5></div>
                         <div class="col-sm-6 basic">
                             <label for="workshopname" class="mr-sm-2" >Workshop name : </label>
                             <input type="text" class="form-control mb-2 mr-sm-4" id="workshopname" name="workshopname" placeholder="Enter Workshop name"/>
+                        </div>
+                        <div class="col-sm-6 basic">
+                            <label for="workshopid" class="mr-sm-2" >Workshop id : </label>
+                            <input type="text" class="form-control mb-2 mr-sm-4" id="workshopid" name="workshopid" placeholder="Create Workshop id"/>
                         </div>
                         <div class="col-sm-6 basic">
                             <label for="workshopbranch" class="mr-sm-2" >Workshop branch : </label>
@@ -51,7 +56,7 @@
                                     <div class="input-group-prepend mb-2" >
                                         <span class="input-group-text">@</span>
                                     </div>
-                                <input type="email" class="form-control mb-2 mr-sm-4" id="details" name="details" placeholder="Enter details"/>
+                                <input type="email" class="form-control mb-2 mr-sm-4" id="details" name="email" placeholder="Enter details"/>
                             </div>
                         </div>
                         

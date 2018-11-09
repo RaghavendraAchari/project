@@ -15,7 +15,7 @@
                                     <li class="nav-item"><a class="nav-link footer-link p-1 m-0" href="search-workshop.php">Search</a></li>
                                     <li class="nav-item"><a class="nav-link footer-link p-1 m-0" href="user-register.php">Register</a></li>
                                     <li class="nav-item"><a class="nav-link footer-link p-1 m-0" href="rent-workshop.php">Rent</a></li>
-                                    <li class="nav-item"><a class="nav-link footer-link p-1 m-0" href="login.php">Login</a></li>
+                                    <li class="nav-item" id="footer-login-link"><a class="nav-link footer-link p-1 m-0" href="login.php">Login</a></li>
                                 </ul>
                             
                         </div>
