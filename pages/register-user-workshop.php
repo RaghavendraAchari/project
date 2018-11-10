@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     $user_id = $_POST["ownerid"];
     $workshop_name = $_POST["workshopname"];
     $workshop_branch = $_POST["workshopbranch"];
@@ -74,5 +75,6 @@
         </div>
 
 <?php require ("footer.php"); ?>
+<?php require("./Helpers/change-user.php"); ?>
 </body>
 </html> 

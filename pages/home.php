@@ -5,6 +5,9 @@ session_start();
     if(isset($_SESSION["user_id"])){
         $user_id=$_SESSION["user_id"];
         $user_fname=$_SESSION["user_fname"];
+    }else{
+        $_SESSION["user_id"]=null;
+        $_SESSION["user_fname"]=null;
     }
 
 ?>
@@ -26,8 +29,8 @@ session_start();
         var ele = document.getElementById('home-link');
         ele.className +=' active';
         <?php if($user_id != null && $user_fname!= null){?>
-            var user = document.getElementById('login-link');
-            user.innerHTML = '<a id="login-text" class="nav-link" href="profile-page.php"><?php echo $user_fname ;?></a>';
+            
+            
         <?php } ?>
     </script>
 
@@ -88,16 +91,7 @@ session_start();
     </div>
 
     <?php require("footer.php"); ?>
-    	<?php if($user_id != null){ ?>
-    	
-    	<script type="text/javascript">
-    		var user = document.getElementById('footer-login-link');
-            user.innerHTML = '<a class="nav-link footer-link p-1 m-0" href="<?php echo $user_id!=null ? 'profile.php' : 'login.php' ?>"><?php echo $user_fname!=null ? $user_fname : 'Login' ?></a>';
-    	</script>
-    		
-    		
-    <?php	}
-    ?>
+    <?php require("./Helpers/change-user.php"); ?>
 	
 </body>
 </html>

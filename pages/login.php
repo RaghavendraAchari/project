@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+    if(! isset($_SESSION["user_id"])){
+        $_SESSION["user_id"]=null;
+        $_SESSION["user_fname"]=null;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +18,7 @@
                 <div class="inner-box">
                                 <?php 
                         
-                        if(isset($_POST["username"]) && isset($_POST["pswd"])){
+                        if(isset($_POST["submit"])){
                             $user =$_POST["username"];
                             $pass =$_POST["pswd"];
                              

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,5 +32,6 @@
 
 
     <?php require("footer.php"); ?>
+    <?php require("./Helpers/change-user.php"); ?>
 </body>
 </html>

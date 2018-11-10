@@ -66,6 +66,7 @@ $my_sqli = new mysqli($server, $username, $password,$dbname);
   </div>
   
   <?php include("footer.php"); ?>
+  <?php require("./Helpers/change-user.php"); ?>
 </body>
 
 </html>
