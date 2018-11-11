@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 22, 2018 at 05:30 PM
+-- Generation Time: Nov 11, 2018 at 06:11 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -92,6 +92,9 @@ INSERT INTO `rating` (`workshop_id`, `workshop_rating`) VALUES
 ('marvelws2', 4.6),
 ('marvelws3', 4),
 ('paraws', 4),
+('rahul01', 4.9),
+('rahul02', 4.8),
+('rahul03', 0),
 ('sonyws', 4.6),
 ('sonyws2', 4.2);
 
@@ -165,6 +168,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_fname` varchar(30) NOT NULL,
   `user_lname` varchar(30) NOT NULL,
   `user_phone` varchar(10) NOT NULL,
+  `user_email` varchar(50) DEFAULT NULL,
   `user_address` text NOT NULL,
   `user_password` varchar(10) NOT NULL,
   PRIMARY KEY (`user_id`)
@@ -174,11 +178,40 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_fname`, `user_lname`, `user_phone`, `user_address`, `user_password`) VALUES
-('dc', 'DC', 'comics', '6565656565', '#89/5, Malya Street,1st main,RR nagar, Bengaluru - 560089', 'dc'),
-('marvel', 'Marvel', 'Studios', '7575757575', '#111, BTM layout, Jayanagar, Bengaluru -560002', 'marvel'),
-('paramount', 'Paramount', 'Studios', '7465487457', '#112, Dr.Rajkumar Road, MariyappanPalya, Bengaluru, 560344', 'paramount'),
-('sony', 'Sony', 'Universe', '8989898989', '#234, Gandhi Street, JP nagar, Bengaluru - 560078', 'sony');
+INSERT INTO `user` (`user_id`, `user_fname`, `user_lname`, `user_phone`, `user_email`, `user_address`, `user_password`) VALUES
+('dc', 'DC', 'comics', '6565656565', 'dc@dc.com', '#89/5, Malya Street,1st main,RR nagar, Bengaluru - 560089', 'dc'),
+('marvel', 'Marvel', 'Studios', '7575757575', 'marvel@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560002', 'marvel'),
+('paramount', 'Paramount', 'Studios', '7465487457', 'para@paramount.com', '#112, Dr.Rajkumar Road, MariyappanPalya, Bengaluru, 560344', 'paramount'),
+('rahul', 'rahul', 'raju', '6754545454', 'raghahgagga@faga.com', 'udhfkushdfukes', 'rahul'),
+('rahul02', 'rahul', '', '7676765765', 'htff@ghg.cm', 'hggfytfyt', 'rahul02'),
+('sony', 'Sony', 'Universe', '8989898989', 'sony@sony.com', '#234, Gandhi Street, JP nagar, Bengaluru - 560078', 'sony');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_history`
+--
+
+DROP TABLE IF EXISTS `user_history`;
+CREATE TABLE IF NOT EXISTS `user_history` (
+  `user_id` varchar(10) NOT NULL,
+  `workshop_id` varchar(10) NOT NULL,
+  `booked_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `given_rating` int(11) NOT NULL DEFAULT '0',
+  KEY `user-data` (`user_id`),
+  KEY `workshop-data` (`workshop_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user_history`
+--
+
+INSERT INTO `user_history` (`user_id`, `workshop_id`, `booked_date`, `given_rating`) VALUES
+('marvel', 'paraws', '2018-11-11 16:23:52', 4),
+('marvel', 'sonyws', '2018-11-11 16:23:52', 5),
+('marvel', 'dcws2', '2018-11-11 16:23:59', 0),
+('marvel', 'rahul02', '2018-11-11 16:24:09', 4),
+('marvel', 'rahul01', '2018-11-11 16:45:59', 5);
 
 -- --------------------------------------------------------
 
@@ -192,6 +225,7 @@ CREATE TABLE IF NOT EXISTS `workshop` (
   `workshop_id` varchar(10) NOT NULL,
   `workshop_name` varchar(40) NOT NULL,
   `workshop_phone` varchar(10) NOT NULL,
+  `workshop_email` varchar(50) DEFAULT NULL,
   `workshop_address` text NOT NULL,
   `Workshop_branch_id` char(1) NOT NULL,
   `workshop_user_id` varchar(10) NOT NULL,
@@ -201,20 +235,23 @@ CREATE TABLE IF NOT EXISTS `workshop` (
   KEY `branch` (`Workshop_branch_id`),
   KEY `user` (`workshop_user_id`),
   KEY `no` (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `workshop`
 --
 
-INSERT INTO `workshop` (`no`, `workshop_id`, `workshop_name`, `workshop_phone`, `workshop_address`, `Workshop_branch_id`, `workshop_user_id`, `price`, `admin_accepted`) VALUES
-(1, 'dcws2', 'DC studios', '5645645646', '12, Flood street, 2nd stage, jp nagar ,Bengaluru - 560789', '3', 'dc', 300, 1),
-(2, 'marvelws', 'Marvel\'s', '5343653635', '#123/5, 2nd Street, Peenya, Bengaluru - 560079', '1', 'marvel', 400, 1),
-(3, 'marvelws2', 'Marvel\'s', '7686957456', '#456, 3rd Main, Long street, Basavanagudi,Bengaluru - 560089', '2', 'marvel', 350, 1),
-(4, 'marvelws3', 'Marvel\'s', '2344322345', '#45, 2nd Street, South-End circle, Bengaluru - 560089', '4', 'marvel', 370, 0),
-(5, 'paraws', 'Paramount Technologies', '7686758495', '#234, 2nd Main, Basavanagudi, Bengaluru - 560034', '1', 'paramount', 400, 1),
-(6, 'sonyws', 'Sony ', '76869578', '#45, chord Road, Vijaynagar, Bengaluru - 560009', '4', 'sony', 420, 1),
-(7, 'sonyws2', 'Sony', '4353647578', '#65, 1st main,Pipeline road, Rajajinagar, Bengaluru 560089', '1', 'sony', 390, 1);
+INSERT INTO `workshop` (`no`, `workshop_id`, `workshop_name`, `workshop_phone`, `workshop_email`, `workshop_address`, `Workshop_branch_id`, `workshop_user_id`, `price`, `admin_accepted`) VALUES
+(1, 'dcws2', 'DC studios', '5645645646', NULL, '12, Flood street, 2nd stage, jp nagar ,Bengaluru - 560789', '3', 'dc', 300, 1),
+(2, 'marvelws', 'Marvel\'s', '5343653635', NULL, '#123/5, 2nd Street, Peenya, Bengaluru - 560079', '1', 'marvel', 400, 1),
+(3, 'marvelws2', 'Marvel\'s', '7686957456', NULL, '#456, 3rd Main, Long street, Basavanagudi,Bengaluru - 560089', '2', 'marvel', 350, 1),
+(4, 'marvelws3', 'Marvel\'s', '2344322345', NULL, '#45, 2nd Street, South-End circle, Bengaluru - 560089', '4', 'marvel', 370, 1),
+(5, 'paraws', 'Paramount Technologies', '7686758495', NULL, '#234, 2nd Main, Basavanagudi, Bengaluru - 560034', '1', 'paramount', 400, 1),
+(9, 'rahul01', 'Rahuls Workshop', '6754545454', 'fdresbvct@gmail.com', 'ksdkdjhfksdjf', '3', 'rahul', 500, 1),
+(14, 'rahul02', 'Rahul Workshop2', '7676765765', 'fdresbvct@gmail.com', 'jhsdgjhsg', '1', 'rahul', 500, 1),
+(15, 'rahul03', 'Rahul Workshop3', '5454545454', 'swasheg@gmail.com', 'sdfsdfdfdgdgfdgdhgf', '1', 'rahul', 500, 1),
+(6, 'sonyws', 'Sony ', '76869578', NULL, '#45, chord Road, Vijaynagar, Bengaluru - 560009', '4', 'sony', 420, 1),
+(7, 'sonyws2', 'Sony', '4353647578', NULL, '#65, 1st main,Pipeline road, Rajajinagar, Bengaluru 560089', '1', 'sony', 390, 1);
 
 -- --------------------------------------------------------
 
@@ -247,6 +284,13 @@ ALTER TABLE `rating`
 --
 ALTER TABLE `timing_details`
   ADD CONSTRAINT `workshopid` FOREIGN KEY (`workshop_id`) REFERENCES `workshop` (`workshop_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `user_history`
+--
+ALTER TABLE `user_history`
+  ADD CONSTRAINT `user-data` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `workshop-data` FOREIGN KEY (`workshop_id`) REFERENCES `workshop` (`workshop_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `workshop`

@@ -1,0 +1,37 @@
+.form-check-label{
+    display: block ;
+}
+.apply{
+    padding: 3px ;
+}
+.card{
+    border-radius: 0rem ;
+}
+#workshop-element{
+    border-radius: 0rem ;
+}
+.card-body{
+    border-bottom: 1px solid gainsboro ;
+}
+.heading{
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
+.details{
+    border-right: 1px solid rgba(0, 0, 0, .25);
+}
+.row-end{
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
+.workshop:hover{
+    background-color: rgba(214, 213, 213, 0.164);
+    transition-duration: .35s ;
+}
+.overflow{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior: unset;
+}
+.col-sm-3{
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: middle;
+}

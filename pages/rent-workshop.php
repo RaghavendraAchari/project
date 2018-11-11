@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
                         <div class="col-sm-12 heading"><h5 class="text-danger">Workshop Owner Info : </h5></div>
                         <div class="col-sm-6 basic">
                             <label for="ownerid" class="mr-sm-2" >Workshop owner id : </label>
-                            <input type="text" class="form-control mb-2 mr-sm-4" id="ownerid" name="ownerid" placeholder="Enter Workshop owner id"/>
+                            <input type="text" class="form-control mb-2 mr-sm-4" id="ownerid" name="ownerid" placeholder="Enter Workshop owner id" value="<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] :'' ; ?>"/>
                         </div>
                         <div class="col-sm-12 heading"><h5 class="text-danger">Workshop Info : </h5></div>
                         <div class="col-sm-6 basic">

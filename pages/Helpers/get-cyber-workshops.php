@@ -24,13 +24,13 @@
                     include("./Helpers/get-image.php");
                 ?>
                 <div class="card h-100" id="workshop-element" style="border-radius : 0rem; background-image : <?php echo $img; ?>">
-                    <div class="card-header text-center">
+                    <div class="card-header text-center h-25">
                         <h4 class="card-title">
                             <?php echo $indrow['workshop_name']; ?>
                         </h4>
                         
                     </div>
-                    <div class="card-body card-text">
+                    <div class="card-body card-text h-50">
                         <p class="card-text mb-1">
                             <?php echo "Address : "?>
                         </p>
@@ -39,7 +39,7 @@
                         </p>
                         
                     </div>
-                    <div class="card-body pt-0">
+                    <div class="card-body pt-0 h-30">
                         <h5 class="font-weight-normal">
                             <span class="badge badge-info h-50 text-left">
                                 <?php echo $indrow['branch_name']; ?>

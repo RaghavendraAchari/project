@@ -44,10 +44,7 @@
                                     $_SESSION["user_id"]=$row["user_id"];
                                     $user_name = $row["user_fname"];
                                     $user_id=$row["user_id"];
-                                    ?><div><h4>Log in success full..</h4>
-                                            <p>welcome : <?php echo $user_name; ?></p>
-                                            <a href="./home.php" >Continue..</a>
-                                        </div><?php
+                                    header("Location: home.php");
                                 }
                         }else {
                             ?>
