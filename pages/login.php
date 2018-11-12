@@ -32,6 +32,20 @@
                             if($mysqli->connect_errno){
                                 die('Could not connect to '.$mysqli->connect_err());
                             }
+
+                            $sql_statement = "SELECT * FROM admin WHERE admin_id='$user' AND admin_password='$pass' " ;
+                            $data = $mysqli->query($sql_statement);
+                            
+                            if($data->num_rows==1){
+                                $data->data_seek(0);
+                                $row = $data->fetch_assoc();
+
+                                $_SESSION["admin_id"]=$row["admin_id"];
+                                $_SESSION["user_fname"]=$row["admin_name"];
+                                header("Location: admin-page.php");
+                            }
+
+
                             //prepare statement
                             $sql_statement = "SELECT * FROM user WHERE user_id='$user' AND user_password='$pass' " ;
                             $data = $mysqli->query($sql_statement);

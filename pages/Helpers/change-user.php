@@ -1,7 +1,7 @@
 
 <?php 
 
-if(! empty($_SESSION['user_id'] || ! empty($_SESSION['user_fname']))){ ?>
+if(! empty($_SESSION['user_id'] || ! empty($_SESSION['admin_id']) || ! empty($_SESSION['user_fname']))){ ?>
     	
     	<script type="text/javascript">
         var user = document.getElementById('login-link');
