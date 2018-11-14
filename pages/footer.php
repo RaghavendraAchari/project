@@ -32,7 +32,7 @@
                     </div>
                     
         
-        <div class="copyright-content" style="background:rgb(24, 43, 63);">
-                <p>copyright 2018. All rights reserved. Working Solutions.</p>
+        <div class="copyright-content mb-1" style="background:rgb(24, 43, 63);">
+                <p class="mb-1">copyright 2018. All rights reserved. Working Solutions.</p>
             </div>
     </footer>

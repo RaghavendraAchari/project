@@ -6,17 +6,17 @@
     $workshop_branch_id;
     switch ($workshop_branch) {
         case 'Cyber':
-            $workshop_branch_id=1;
-            break;
-            case 'Electrical':
-            $workshop_branch_id=2;
-            break;
-            case 'Mechanical':
-            $workshop_branch_id=3;
-            break;
-            case 'Carpentry':
-            $workshop_branch_id=4;
-            break;
+        $workshop_branch_id=1;
+        break;
+        case 'Electrical':
+        $workshop_branch_id=2;
+        break;
+        case 'Mechanical':
+        $workshop_branch_id=3;
+        break;
+        case 'Carpentry':
+        $workshop_branch_id=4;
+        break;
         
         default:
             # code...

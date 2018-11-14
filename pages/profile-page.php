@@ -9,7 +9,14 @@
         die('Could not connect to '.$mysqli->connect_err());
     }
     //prepare statement
-    $sql_statement = "SELECT * FROM user WHERE user_id='$_SESSION[user_id]'";
+    $sql_statement = null ;
+    if(! empty($_SESSION['admin_id'])){
+        header("Location: admin-page.php");
+        exit(0);
+    }else{
+        $sql_statement = "SELECT * FROM user WHERE user_id='$_SESSION[user_id]'";
+    }
+
     //
     $result = $mysqli->query($sql_statement);
     $result->data_seek(0);
@@ -95,7 +102,7 @@
                     <div class="col-sm-8" >
                         <div class="p-2" >
                             <h4 class="card-title heading  pb-2 text-danger">Your Workshops : </h4>
-                            <div class="overflow"style=" height : 340px;" >
+                            <div class="overflow" style=" height : 340px;" >
                                 <?php 
                                     if(! $workshop_result->num_rows){
                                         echo '<p class="text-center">No workshops are registered</p>';
@@ -110,7 +117,7 @@
                                                     <h5 class="card-title m-2 text-secondary"><?php echo $workshop_data['workshop_name']; ?></h5>
                                                 </div>
                                                 <div class="col-sm-4 text-right">
-                                                    <a class="btn btn-dark" href="#">Details</a>
+                                                    <a class="btn btn-dark" href="workshop-details.php?id=<?php  echo $workshop_data['workshop_id']; ?>">Details</a>
                                                 </div>
                                             </div>
                                             
@@ -118,14 +125,30 @@
                                     <?php }
                                     }
                                 ?> 
+                                    <a href="rent-workshop.php" class="card btn btn-primary m-1">
+                                        <div class="card-body p-2" style="border-bottom : none; ">
+                                            <h5 class="card-title text-dark m-0">Rent A New Workshop</h5>
+                                        </div>
+                                    </a>     
+                               
                             </div>
                             
                         </div>
                     </div>
-                <div class="col-sm-4 p-2 details text-center">
-                    <a class="btn btn-info" href="logout.php">Edit Details</a>
+                <div class="col-sm-4 details text-center">
+                    <a href="user-register.php?update=1" class="card btn btn-primary m-2">
+                        <div class="card-body p-1" style="border-bottom : none; ">
+                            <h5 class="card-title text-dark m-1">Edit Details</h5>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-sm-8 p-2 text-center"><a class="btn btn-info" href="logout.php">Logout</a></div>
+                <div class="col-sm-8 text-center">
+                    <a href="logout.php" class="card btn btn-primary m-2">
+                        <div class="card-body p-1"  style="border-bottom : none; ">
+                            <h5 class="card-title text-dark m-1">Log Out</h5>
+                        </div>
+                    </a>
+                </div>
                     
                 
                 

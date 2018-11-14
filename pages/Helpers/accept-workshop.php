@@ -1,7 +1,7 @@
 <?php
 session_start();
 $id = $_GET['id'];
-require("./Helpers/admin-details.phop");
+require("./admin-details.php");
 $mysqli = new mysqli($server, $username, $password,$dbname);
     
     
@@ -10,7 +10,8 @@ $mysqli = new mysqli($server, $username, $password,$dbname);
         die('Could not connect to '.$mysqli->connect_err());
     }
     //prepare statement
-    $sql_statement = "CALL accept_workshop($id)";
+    $sql_statement = "CALL accept_workshop('$id')";
+    
     //
     $result = $mysqli->query($sql_statement);
 

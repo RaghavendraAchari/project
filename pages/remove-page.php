@@ -24,6 +24,9 @@
                 <input class="form-control ml-sm-2 mr-sm-2" name="searchbar" placeholder="search" id="searchbar"/>
                 <button class="btn btn-secondary" name="searchbutton" type="submit">Search</button>
             </form>
+            <div class="col-sm-4">
+                <a href="admin-page.php" class="btn btn-secondary">Go To Profile Page</a>
+            </div>
         </nav>
 
         <div id="search-window" class="bg-light mt-2 mb-2" >
@@ -39,27 +42,27 @@
                 <div class = "row h-100" style="margin : 0rem;">
                     
                         <div class="col-sm-2 bg-light text-dark" style="border-right : 1px solid rgb(158, 158, 158);">
-                            <a class="btn btn-info card m-2 <?php echo $selection == "all"? "active" : "" ; ?>" id="all" href="search-workshop.php?selection=all" >
+                            <a class="btn btn-info card m-2 <?php echo $selection == "all"? "active" : "" ; ?>" id="all" href="remove-page.php?selection=all&remove=1" >
                                     <div class="card-body card-text">
                                         All
                                     </div>
                             </a>
-                            <a class="card btn btn-info m-2 <?php echo $selection == "cyber"? "active" : "" ; ?>"  id="cyber" href="search-workshop.php?selection=cyber">
+                            <a class="card btn btn-info m-2 <?php echo $selection == "cyber"? "active" : "" ; ?>"  id="cyber" href="remove-page.php?selection=cyber&remove=1">
                                 <div class="card-body card-text">
                                     Cyber
                                 </div>
                             </a>
-                            <a class="card btn btn-info m-2 <?php echo $selection == "electrical"? "active" : "" ; ?>" id="electrical" href="search-workshop.php?selection=electrical">
+                            <a class="card btn btn-info m-2 <?php echo $selection == "electrical"? "active" : "" ; ?>" id="electrical" href="remove-page.php?selection=electrical&remove=1">
                                 <div class="card-body card-text">
                                     Electrical
                                 </div>
                             </a>
-                            <a class="card btn btn-info m-2 <?php echo $selection == "mechanical"? "active" : "" ; ?>" id="mechanical" href="search-workshop.php?selection=mechanical">
+                            <a class="card btn btn-info m-2 <?php echo $selection == "mechanical"? "active" : "" ; ?>" id="mechanical" href="remove-page.php?selection=mechanical&remove=1">
                                 <div class="card-body card-text">
                                     Mechanical
                                 </div>
                             </a>
-                            <a class="card btn btn-info m-2 <?php echo $selection == "carpentry"? "active" : "" ; ?>" id="carpentry" href="search-workshop.php?selection=carpentry">
+                            <a class="card btn btn-info m-2 <?php echo $selection == "carpentry"? "active" : "" ; ?>" id="carpentry" href="remove-page.php?selection=carpentry&remove=1">
                                 <div class="card-body card-text">
                                     carpentry
                                 </div>
@@ -73,11 +76,6 @@
                     </div>    
 
                 </div>
-                
-                
-                <?php
-                    mysqli_close($mysqli);
-                ?>
         </div>
     </div>
     <?php require("footer.php"); ?>

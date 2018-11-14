@@ -82,7 +82,7 @@
                         $(this).val("Applied");
                     });
                     var request = new XMLHttpRequest();
-                    var link = "./Helpers/get-all-workshops.php?selection=all";
+                    var link = "./Helpers/get-workshop.php?selection=all&from=book";
                     request.open("GET",link);
                     request.send();
                     request.onreadystatechange = function(){

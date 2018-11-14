@@ -16,7 +16,7 @@
 
     $data = $result->fetch_assoc();
 
-    $sql_statement = "SELECT * FROM workshop ";
+    $sql_statement = "SELECT * FROM workshop  WHERE admin_accepted='0' ";
     $workshop_result = $mysqli->query($sql_statement);
     
     // $sql_statement = "SELECT * FROM user_history WHERE user_id='$_SESSION[user_id]'";
@@ -50,14 +50,14 @@
                         <div class="overflow"style="height : 230px;">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <a href="#" class="card btn btn-primary m-1">
+                                    <a href="rent-workshop.php" class="card btn btn-primary m-1">
                                         <div class="card-body p-1">
                                             <h5 class="card-title text-dark m-1">Add Workshop</h5>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-sm-12">
-                                    <a href="#" class="card btn btn-primary m-1">
+                                    <a href="remove-page.php?remove=1" class="card btn btn-primary m-1">
                                         <div class="card-body p-1">
                                             <h5 class="card-title text-dark m-1">Remove Workshop</h5>
                                         </div>
@@ -89,45 +89,49 @@
                                 <?php 
                                     if(! $workshop_result->num_rows){
                                         echo '<p class="text-center">No pending workshops</p>';
+
                                     }else{ 
                                         for( $row = 0 ;  $row< $workshop_result->num_rows;  $row++){
                                             $workshop_result->data_seek( $row);
                                             $workshop_data = $workshop_result->fetch_assoc();
-                                            if($workshop_data['admin_accepted']=='0'){
+                                            
                                         ?>
                                             <div class="card card-body m-1 p-2 workshop">
                                                 <div class="row">
-                                                    <div class="col-sm-8">
+                                                    <div class="col-sm-6">
                                                         <h5 class="card-title m-2 text-secondary"><?php echo $workshop_data['workshop_name']; ?></h5>
                                                     </div>
-                                                    <div class="col-sm-4 text-right">
-                                                        <script type="text/javascript">
-                                                            function accept(id) {
-                                                                var request = new XMLHttpRequest();
-                                                                var link = "./Helpers/accept-workshop.php?id="+id;
-                                                                request.open("GET",link);
-                                                                request.send();
-
-                                                                request.onreadystatechange = function(){
-                                                                    if(request.readyState == 4){
-                                                                        var ele = document.getElementById('accept-button');
-                                                                        ele.innerTEXT= request.responseText;
-                                                                    }
-                                                                }
-                                                            }
-                                                        </script>
-                                                        <button class="btn btn-dark" id="accept-button" onclick="accept('<?php echo $workshop_data['workshop_id'] ;?>')" >Accept</button>
+                                                    <div class="col-sm-6 text-right">
+                                                        
+                                                        <button class="btn btn-dark" style="overflow-x : auto; overflow-y : auto;" id="accept-button-<?php echo $workshop_data['workshop_id'];?>" onclick="accept('<?php echo $workshop_data['workshop_id'];?>', 'accept-button-<?php echo $workshop_data['workshop_id'];?>' )" >Accept</button>
                                                         
                                                         <a class="btn btn-dark" href="">Details of workshop</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php }
+                                        <?php 
                                         }
+                                        
                                     }
                                 ?> 
                             </div>
-                            
+                            <script type="text/javascript">
+                                    function accept(user, id) {
+                                    
+                                    var request = new XMLHttpRequest();
+                                    var link = "./Helpers/accept-workshop.php?id=" + user.toString() ;
+                                    request.open("GET",link);
+                                    request.send();
+
+                                    request.onreadystatechange = function(){
+                                        if(request.readyState == 4){
+                                            var ele = document.getElementById(id);
+                                            ele.innerText = request.responseText;
+                                        }
+                                    }
+                                }
+                                
+                            </script>
                         </div>
                     </div>
                 <div class="col-sm-4 pl-3 pr-3 details">
