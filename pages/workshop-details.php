@@ -1,5 +1,16 @@
 <?php session_start(); 
-$workshop_id = $_GET['id'];
+$workshop_id = null;
+if(isset($_GET['id'])){
+    $workshop_id = $_GET['id'];
+    
+}else if(! isset($_GET['id']) && !isset($_SESSION['registering_workshop'])){
+    if(isset($_SESSION['updating_workshop'])){
+        $workshop_id = $_SESSION['updating_workshop'];
+        }
+}else if(isset($_SESSION['registering_workshop'])){
+    $workshop_id = $_SESSION['registering_workshop'];
+}
+
 
 require("./Helpers/admin-details.php");
     $mysqli = new mysqli($server, $username, $password,$dbname);
@@ -75,6 +86,7 @@ require("./Helpers/admin-details.php");
                         </div>
                     </div>
                 </div>
+                    
                 </div>
                 <div class="col-sm-8">
 
@@ -184,7 +196,7 @@ require("./Helpers/admin-details.php");
                             </div>
                         </div>
                         <div class="p-2" >
-                            <h4 class="card-title heading  pb-2 text-danger">Other Branches : </h4>
+                            <h4 class="card-title heading  pb-2 text-danger">Other Workshops : </h4>
                             <div class="overflow"style=" height : 280px;" >
                                 <?php 
                                   if(! $more_branch_result){
@@ -193,12 +205,12 @@ require("./Helpers/admin-details.php");
                                       for ($row=0; $row < $more_branch_result->num_rows; $row++) { 
                                           $more_branch_result->data_seek($row);
                                           $other_branch = $more_branch_result->fetch_assoc();  
-                                          $branch_id= $other_branch['Workshop_branch_id'];
-                                            $sql_statement = "SELECT * FROM branches WHERE branch_id='$branch_id'  ";
+                                            $branch_id = $other_branch['Workshop_branch_id'];
+                                            $sql_statement = "SELECT branch_name FROM branches WHERE branch_id='$branch_id'  ";
                                             $br = $mysqli->query($sql_statement);
                                             $br->data_seek(0);
                                             $br_details = $br->fetch_assoc();
-                                            $br_name = $br_details['branch_name'];
+                                            
 
                                             if($other_branch['workshop_id']!= $workshop_id){
                                             ?>
@@ -210,7 +222,7 @@ require("./Helpers/admin-details.php");
                                                                     <h5 class="card-title m-2 text-secondary"><?php echo $other_branch['workshop_name']; ?></h5>
                                                                 </div>
                                                                 <div class="col-sm-6">
-                                                                    <h6 class="card-text m-2">Branch : <?php echo $br_name ; ?></h6>
+                                                                    <h6 class="card-text m-2">Branch : <?php echo $br_details['branch_name'] ; ?></h6>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -230,9 +242,18 @@ require("./Helpers/admin-details.php");
                             </div>
                             
                         </div>
+                        
                     </div>
                     
                 </div>
+                <div class="col-sm-4 details text-center">
+                    <a href="rent-workshop.php?update=1&id=<?php echo $data["workshop_id"] ;?>" class="card btn btn-primary m-2">
+                        <div class="card-body p-1" style="border-bottom : none; ">
+                            <h5 class="card-title text-dark m-1">Edit Details</h5>
+                        </div>
+                    </a>
+                </div>
+                            
 
                 
                     

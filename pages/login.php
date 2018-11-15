@@ -10,6 +10,21 @@
     <head>
         <title>log in</title>
         <link href="./CSS/login-style.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript">
+            function checkForm(form) {
+                if(form.username.value == ""){
+                    form.username.focus();
+                    form.username.setAttribute("placeholder","Enter a valid user name");
+                    return false;
+                }
+                if(form.pswd.value == ""){
+                    form.pswd.focus();
+                    form.username.setAttribute("placeholder","Enter password");
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </head>
 
     <body>
@@ -50,31 +65,36 @@
                             $sql_statement = "SELECT * FROM user WHERE user_id='$user' AND user_password='$pass' " ;
                             $data = $mysqli->query($sql_statement);
                             
-                                if($data->num_rows==1){
-                                    $data->data_seek(0);
-                                    $row = $data->fetch_assoc();
+                            if($data->num_rows==1){
+                                $data->data_seek(0);
+                                $row = $data->fetch_assoc();
 
-                                    $_SESSION["user_fname"]=$row["user_fname"];
-                                    $_SESSION["user_id"]=$row["user_id"];
-                                    $user_name = $row["user_fname"];
-                                    $user_id=$row["user_id"];
-                                    header("Location: home.php");
-                                }
-                        }else {
+                                $_SESSION["user_fname"]=$row["user_fname"];
+                                $_SESSION["user_id"]=$row["user_id"];
+                                $user_name = $row["user_fname"];
+                                $user_id=$row["user_id"];
+                                header("Location: home.php");
+                            }
+
+                            
+
+                        }
+                        if(true) {
                             ?>
-                            <form action="login.php" method="POST">
+                            <form action="login.php" method="POST" onsubmit="return checkForm(this);">
                                 <div class="heading">
                                     <h2>Log in</h2>
                                 </div>
                                 <div class="form-box">
+                                    <div style="padding : 1px ; border : 1px solid rgba(0,0,0,0.2); color : red ;" <?php echo isset($_POST['submit']) ? "" : "hidden" ; ?> ><span>UserID / Password Incorrect</span></div>
                                     <div class="input-form">
-                                        <p>Username</p>
-                                        <input type="text" name="username" />
+                                        <p>User ID</p>
+                                        <input type="text" name="username" placeholder="" />
                                     </div>
-                                <div class="input-form">
-                                    <p>Password</p>
-                                    <input type="password" name="pswd" />
-                                </div>
+                                    <div class="input-form">
+                                        <p>Password</p>
+                                        <input type="password" name="pswd"  placeholder=""/>
+                                    </div>
         
                                 <div class="submit-btn">
                                     <input class="submit" type="submit" name="submit" value="login"/>
