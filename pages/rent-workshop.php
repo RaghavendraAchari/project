@@ -161,6 +161,12 @@ if(isset($_GET['update'])){
                         <div class="col-sm-12 heading"><h5 class="text-danger">Workshop details : </h5></div>
                         <div class="col-sm-6 basic">
                             <div >
+                                <label for="price" class="mr-sm-2" >Price of 3 hours : </label>
+                                <input type="text" value="<?php echo $update ? $workshop_data['price'] : "0";?>"  class="form-control mb-2 mr-sm-4" id="price" name="price" placeholder="Price of 3 hours"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 basic">
+                            <div >
                                 <label for="description" class="mr-sm-2" >Description of Workshop : </label>
                                 <textarea type="text" value="<?php echo $update ? "": "";?>" cols="30" rows="10" class="form-control mb-2 mr-sm-4" id="description" name="description" placeholder="Describe your workshop..."></textarea>
                             </div>

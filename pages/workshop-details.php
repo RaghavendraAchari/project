@@ -6,6 +6,7 @@ if(isset($_GET['id'])){
 }else if(! isset($_GET['id']) && !isset($_SESSION['registering_workshop'])){
     if(isset($_SESSION['updating_workshop'])){
         $workshop_id = $_SESSION['updating_workshop'];
+
         }
 }else if(isset($_SESSION['registering_workshop'])){
     $workshop_id = $_SESSION['registering_workshop'];
@@ -265,5 +266,11 @@ require("./Helpers/admin-details.php");
 
     <?php require("footer.php"); ?>
     <?php require("./Helpers/change-user.php"); ?>
+    <?php
+    if(isset($_SESSION['updating_workshop'])){
+        session_unset( $_SESSION['updating_workshop']);
+        session_unset( $_SESSION['workshop_updated']);
+        }
+    ?>
 </body>
 </html>

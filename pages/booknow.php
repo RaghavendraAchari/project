@@ -1,5 +1,6 @@
 <?php session_start(); 
 $workshop_id = $_GET['id'];
+$_SESSION['booking_workshop']=$workshop_id;
 
 require("./Helpers/admin-details.php");
     $mysqli = new mysqli($server, $username, $password,$dbname);
@@ -100,10 +101,10 @@ require("./Helpers/admin-details.php");
                                                     
                                                 ?>
                                                 <th>Monday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input p-1" type="checkbox" name="mon-sl1" id="mon-sl1" value="mon-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input p-1" type="checkbox" name="mon-sl2" id="mon-sl2" value="mon-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input p-1" type="checkbox" name="mon-sl3" id="mon-sl3" value="mon-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input p-1" type="checkbox" name="mon-sl4" id="mon-sl4" value="mon-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="mon-sl1" id="mon-sl1" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="mon-sl2" id="mon-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="mon-sl3" id="mon-sl3" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="mon-sl4" id="mon-sl4" />Select This</label>' ; ?></td>
                                             </tr>
                                             <tr>
                                             <?php 
@@ -111,10 +112,10 @@ require("./Helpers/admin-details.php");
                                                     $timing_details = $timing_result->fetch_assoc();
                                                 ?>
                                                 <th>Tueday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input p-1" type="checkbox" name="tue-sl1" id="tue-sl1" value="tue-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input p-1" type="checkbox" name="tue-sl2" id="tue-sl2" value="tue-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input p-1" type="checkbox" name="tue-sl3" id="tue-sl3" value="tue-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input p-1" type="checkbox" name="tue-sl4" id="tue-sl4" value="tue-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="tue-sl1" id="tue-sl1" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="tue-sl2" id="tue-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="tue-sl3" id="tue-sl3" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="tue-sl4" id="tue-sl4" />Select This</label>' ; ?></td>
                                             
                                             </tr>
                                             <tr>
@@ -123,10 +124,10 @@ require("./Helpers/admin-details.php");
                                                     $timing_details = $timing_result->fetch_assoc();
                                                 ?>
                                                 <th>Wednesday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input p-1" type="checkbox" name="wed-sl1" id="wed-sl1" value="wed-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input p-1" type="checkbox" name="wed-sl2" id="wed-sl2" value="wed-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input p-1" type="checkbox" name="wed-sl3" id="wed-sl3" value="wed-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input p-1" type="checkbox" name="wed-sl4" id="wed-sl4" value="wed-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="wed-sl1" id="wed-sl1" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="wed-sl2" id="wed-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="wed-sl3" id="wed-sl3" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="wed-sl4" id="wed-sl4" />Select This</label>' ; ?></td>
                                             
                                             </tr>
                                             <tr>
@@ -135,10 +136,10 @@ require("./Helpers/admin-details.php");
                                                     $timing_details = $timing_result->fetch_assoc();
                                                 ?>
                                                 <th>Thursday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input p-1" type="checkbox" name="thu-sl1" id="thu-sl1" value="thu-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input p-1" type="checkbox" name="thu-sl2" id="thu-sl2" value="thu-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input p-1" type="checkbox" name="thu-sl3" id="thu-sl3" value="thu-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input p-1" type="checkbox" name="thu-sl4" id="thu-sl4" value="thu-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="thu-sl1" id="thu-sl1" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="thu-sl2" id="thu-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="thu-sl3" id="thu-sl3"/>Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="thu-sl4" id="thu-sl4" />Select This</label>' ; ?></td>
                                             
                                             </tr>
                                             <tr>
@@ -147,10 +148,10 @@ require("./Helpers/admin-details.php");
                                                     $timing_details = $timing_result->fetch_assoc();
                                                 ?>
                                                 <th>Friday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input p-1" type="checkbox" name="fri-sl1" id="fri-sl1" value="fri-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input p-1" type="checkbox" name="fri-sl2" id="fri-sl2" value="fri-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input p-1" type="checkbox" name="fri-sl3" id="fri-sl3" value="fri-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input p-1" type="checkbox" name="fri-sl4" id="fri-sl4" value="fri-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="fri-sl1" id="fri-sl1" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="fri-sl2" id="fri-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="fri-sl3" id="fri-sl3" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="fri-sl4" id="fri-sl4" />Select This</label>' ; ?></td>
                                             
                                             </tr>
                                             <tr>
@@ -159,10 +160,10 @@ require("./Helpers/admin-details.php");
                                                     $timing_details = $timing_result->fetch_assoc();
                                                 ?>
                                                 <th>Saturday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input p-1" type="checkbox" name="sat-sl1" id="sat-sl1" value="sat-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input p-1" type="checkbox" name="sat-sl2" id="sat-sl2" value="sat-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input p-1" type="checkbox" name="sat-sl3" id="sat-sl3" value="sat-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input p-1" type="checkbox" name="sat-sl4" id="sat-sl4" value="sat-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="sat-sl1" id="sat-sl1" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="sat-sl2" id="sat-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="sat-sl3" id="sat-sl3" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input p-1" type="checkbox" name="sat-sl4" id="sat-sl4"/>Select This</label>' ; ?></td>
                                             
                                             </tr>
                                             <tr>
@@ -171,14 +172,119 @@ require("./Helpers/admin-details.php");
                                                     $timing_details = $timing_result->fetch_assoc();
                                                 ?>
                                                 <th>Sunday</th>
-                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<input class="form-check-input" type="checkbox" name="sun-sl1" id="sun-sl1" value="sun-sl1"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<input class="form-check-input" type="checkbox" name="sun-sl2" id="sun-sl2" value="sun-sl2"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<input class="form-check-input" type="checkbox" name="sun-sl3" id="sun-sl3" value="sun-sl3"> Select This ' ; ?></td>
-                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<input class="form-check-input" type="checkbox" name="sun-sl4" id="sun-sl4" value="sun-sl4"> Select This ' ; ?></td>
+                                                <td><?php echo $timing_details['slot1']=='booked' || $timing_details['slot1']=='not-available' ? $timing_details['slot1'] : '<label for="" class="form-check-label"><input class="form-check-input" type="checkbox" name="sun-sl1" id="sun-sl1"/> Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot2']=='booked' || $timing_details['slot2']=='not-available' ? $timing_details['slot2'] : '<label for="" class="form-check-label"><input class="form-check-input" type="checkbox" name="sun-sl2" id="sun-sl2" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot3']=='booked' || $timing_details['slot3']=='not-available' ? $timing_details['slot3'] : '<label for="" class="form-check-label"><input class="form-check-input" type="checkbox" name="sun-sl3" id="sun-sl3" />Select This</label>' ; ?></td>
+                                                <td><?php echo $timing_details['slot4']=='booked' || $timing_details['slot4']=='not-available' ? $timing_details['slot4'] : '<label for="" class="form-check-label"><input class="form-check-input" type="checkbox" name="sun-sl4" id="sun-sl4" />Select This</label>' ; ?></td>
                                             
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <input type="text" name="id" value="<?php echo $workshop_id; ?>" id="id" hidden/>
+                                    <div class="input-group">
+                                        <div class="accordion m-1 p-1 w-100 h-100"  id="accordionCollapse" >
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="card-link" data-toggle="collapse"  href="#collapseOne"><b>PayTM</b></a>
+                                                </div>
+                                            </div>
+                                            <div class="collapse" id="collapseOne" data-parent="#accordionCollapse">
+                                                <div class="card card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label class="p-2">Mobile Number Linked To Paytm</label>
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <input class="form-control" name="paytm" id="paytm" type="text" />
+                                                            
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="card" style="border-radius : 0rem;">
+                                                <div class="card-header"><a class="card-link" href="#collapseTwo"  data-toggle="collapse" ><b>Debit Card</b></a></div>             
+                                            </div>    
+                                            <div id="collapseTwo" class="collapse" data-parent="#accordionCollapse">
+                                                <div class="card card-body">
+                                                    
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                            <label>Card No </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control"  name="debitCardNo" id="debitCar" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                            <label>Name On The Card </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" name="debitCar" id="debitCar" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                            <label >Exp Date </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                        <input class="form-control" name="debitCarExpDate" id="debitCarExpDate" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                        <label >CVV </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                        <input class="form-control" name="debitCarCVV" id="debitCarCVV" type="text"/>
+                                                        </div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                            <div class="card" style="border-radius : 0rem;">
+                                                <div class="card-header"><a class="card-link" href="#collapseThree"  data-toggle="collapse" ><b>Credit Card</b></a></div>             
+                                            </div>    
+                                            <div id="collapseThree" class="collapse" data-parent="#accordionCollapse">
+                                                <div class="card card-body" style=" border-bottom: 1px solid gainsboro ;">
+                                                    
+                                                   
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                            <label>Card No </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control"  name="creditCardNo" id="creditCar" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                            <label>Name On The Card </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" name="creditCardName" id="creditCar" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                            <label >Exp Date </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                        <input class="form-control" name="creditCardExpDate" id="creditCarExpDate" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row p-1 m-1">
+                                                        <div class="col-sm-4">
+                                                        <label >CVV </label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                        <input class="form-control" name="creditCardCVV" id="creditCarCVV" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="input-group">
                                         <input class="btn btn-secondary" type="submit" value="Boot Slots" name="bookslots" />
                                     </div>

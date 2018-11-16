@@ -27,8 +27,9 @@
     $workshop_phone = $_POST["phone"];
     $workshop_description = $_POST["description"];
     $workshop_id = $_POST["workshopid"];
+    $workshop_price = $_POST["price"];
     $_SESSION['registering_workshop'] = $workshop_id ;
-    $price=500;
+    
 
 
 
@@ -41,7 +42,7 @@
         die('Could not connect to '.$mysqli->connect_err());
     }
     //prepare statement
-    $sql_statement = "INSERT INTO workshop VALUES ( null,'$workshop_id','$workshop_name','$workshop_phone','$workshop_email','$workshop_address','$workshop_branch_id','$user_id', $price , 1 )" ;
+    $sql_statement = "INSERT INTO workshop VALUES ( null,'$workshop_id','$workshop_name','$workshop_phone','$workshop_email','$workshop_address','$workshop_branch_id','$user_id', $workshop_price , 0)" ;
     // echo $sql_statement;
     $data = $mysqli->query($sql_statement);
     $update= false;

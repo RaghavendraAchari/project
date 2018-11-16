@@ -6,7 +6,9 @@ session_start();
     if(! $_POST['updatetimings']){
         header("Location: register-user-workshop.php");
     }
-    $workshop_id = $_SESSION['registering_workshop'];
+    if(isset($_SESSION['registering_workshop'])){
+        $workshop_id = $_SESSION['registering_workshop'];
+    }
     $basic = $_POST['basic_tools'];
     $advanced = $_POST['advanced_tools'];
     $area = $_POST['area'];
@@ -90,11 +92,13 @@ session_start();
         $result = $mysqli->query($sql_statement);
         $_SESSION['w_id']= $workshop_id;
         echo $sql_statement;
+        $_SESSION['workshop_updated']= $workshop_id;
+        header("Location: workshop-details.php");
         ?>
             <a href="workshop-details.php" class="btn btn-info">Go</a>
             <?php exit(0);
         }
-        //header("Location: workshop-details.php");?>
+        ?>
 
     
     <?php
@@ -129,7 +133,9 @@ session_start();
     $result = $mysqli->query($sql_statement);
     echo $sql_statement;
     $_SESSION['w_id']= $workshop_id;
-    //header("Location: workshop-details.php");?>
+    header("Location: workshop-details.php");
+    
+    ?>
 
     <a href="workshop-details.php" class="btn btn-info">Go</a>
     <?php

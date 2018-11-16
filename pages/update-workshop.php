@@ -38,8 +38,9 @@ $workshop_id = $_SESSION['updating_workshop'];
     $workshop_phone = $_POST["phone"];
     $workshop_description = $_POST["description"];
     $workshop_id = $_POST["workshopid"];
+    $workshop_price = $_POST["price"];
     $sql_statement = "UPDATE workshop SET workshop_name='$workshop_name', workshop_phone='$workshop_phone' ,
-     workshop_email= '$workshop_email', workshop_address='$workshop_address' ,Workshop_branch_id='$workshop_branch_id' WHERE workshop_id='$workshop_id'";
+     workshop_email= '$workshop_email', workshop_address='$workshop_address' ,price='$workshop_price' WHERE workshop_id='$workshop_id'";
 $result = $mysqli->query($sql_statement);
 echo $sql_statement;
 
