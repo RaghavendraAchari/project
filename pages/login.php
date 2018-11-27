@@ -104,7 +104,7 @@
                                 <p class=""><a href="home.php">Skip</a></p>
                             </footer>
                             <div>
-                                <p style="font-size :18px ; margin-left:0px ;opacity :.85 ;">Not a member? <a href="register-user.php?user=new" style="color : green;">Register Now</a></p>
+                                <p style="font-size :18px ; margin-left:0px ;opacity :.85 ;">Not a member? <a href="user-register.php?user=new" style="color : green;">Register Now</a></p>
                             </div>
                         <?php
                     }

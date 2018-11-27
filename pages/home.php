@@ -84,7 +84,7 @@ session_start();
                         <h2 class="card-title"><?php echo $user_fname!=null ? $user_fname : "Log In" ; ?></h2>
                         <p class="card-text">View your booking history and many more.</p>
                     </div>
-                    <div class="card-footer"><a class="card-link btn btn-info" href="<?php echo $user_id!=null ?'user-history.php':'login.php'; ?>">History</a></div>
+                    <div class="card-footer"><a class="card-link btn btn-info" href="<?php echo $user_id!=null ?>'user-history.php':'login.php'; ?>">History</a></div>
                 </div>
             </div>
         </div>

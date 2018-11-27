@@ -64,6 +64,7 @@ require("./Helpers/admin-details.php");
                             <h5 class="card-title text-danger">Phone : </h5><p class="card-text"><?php echo $data['workshop_phone']; ?></p>
                             <h5 class="card-title text-danger">Address : </h5><p class="card-text"><?php echo $data['workshop_address']; ?></p>
                             <h5 class="card-title text-danger">Branch : </h5><p class="card-text"><?php echo $branch_name ; ?></p>
+                            <h5 class="card-title text-danger">Price : </h5><p class="card-text"><?php echo $data['price'] ; ?></p>
                             <h5 class="card-title text-danger">Rating : </h5><p class="card-text"><?php echo $rating ; ?></p>
                         </div>
                     </div>
