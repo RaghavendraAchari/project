@@ -83,8 +83,8 @@ require("./Helpers/admin-details.php");
                             $timing_result = $mysqli->query($sql_statement);
                             ?>
                                 <form  action="book-slots.php" method="GET">
-                                    <div class="form-group">
-                                    <table class="table table-striped table-hover p-1 input-group">
+                                    <div class="form-group input-group">
+                                    <table class="table table-striped table-hover p-1 ">
                                         <thead>
                                             <tr>
                                                 <th>...............    </th>
@@ -287,7 +287,7 @@ require("./Helpers/admin-details.php");
                                         </div>
                                     </div>
                                     <div class="input-group">
-                                        <input class="btn btn-secondary" type="submit" value="Boot Slots" name="bookslots" />
+                                        <input class="btn btn-secondary" type="submit" value="Book Slots" name="bookslots" />
                                     </div>
                                     </div>
                                     

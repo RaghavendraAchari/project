@@ -69,7 +69,7 @@ $remove = null;
                         </div>
                         <div class="align-self-start h-25">
                             <p class="card-title mb-1 ">Price : </p>
-                            <p class="card-text mb-1 "> Rs : <?php echo $indrow['price']=='0'?"-" :$indrow['price'] ; ?> </p>
+                            <p class="card-text mb-1 "> Rs : <b><?php echo $indrow['price']=='0'?" - " :$indrow['price'] ; ?> /-</b> </p>
                         </div>
                         
                     </div>

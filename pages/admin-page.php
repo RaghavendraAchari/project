@@ -63,6 +63,13 @@
                                         </div>
                                     </a>
                                 </div>
+                                <div class="col-sm-12">
+                                    <a href="booking-status.php" class="card btn btn-primary m-1">
+                                        <div class="card-body p-1">
+                                            <h5 class="card-title text-dark m-1">Show Booking Status</h5>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         
