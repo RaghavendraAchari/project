@@ -3,7 +3,7 @@
                 <div class="row w-100 m-0">
                         <div class="col-sm-4">
                             <h2 class="footer-logo-text bg-light">WS</h2>
-                            <h4 class=" text-white">Working Solutions</h4>
+                            <h4 class=" text-white">Workshop Rental System</h4>
                             <p class="footer-text  text-white">Your work is our priority</p>
                             
                         </div>
@@ -22,14 +22,15 @@
                             
                         </div>
                         <div class="col-sm-4">
+                            
                             <h3 id="about-us"class="text-white">About us</h3>
-                            <h4 class="mb-3 text-white">Working Solutions</h4>
+                            <p class="mb-3 text-light" style="font-size : 1.4rem ;">Workshop Rental System</p>
                             
                             <p class="text-white mb-0">Raghavendra & Ramesh</p>
-                            <p class="text-white mb-0">#123/1, food Street, 2nd stage,</p>
-                            <p class="text-white mb-0">Rajajinagar, Bangalore - 560001</p>
-                            <p class="text-white mb-0">E-mail : workingsolutions@ws.com</p>
-                            <p class="text-white mb-0">Phone :+91 9876543210</p>
+                            <p class="text-white mb-0">#193/3, 1st main, Pipeline Road,</p>
+                            <p class="text-white mb-0">WOC, Rajajinagar, Bangalore - 560086</p>
+                            <p class="text-white mb-0">E-mail : <a class="text-white"  href="mailto:raghav.achari.l@gmail.com">raghav.achari.l@gmail.com</a> (or) <a class="text-white" href="mailto:ramesh.v@gmail.com">ramesh.v@gmail.com</a></p>
+                            <p class="text-white mb-0">Phone : <a class="text-white" href="tel:+91 9731453933">+91 9731453933</a> (or) <a class="text-white" href="tel:+91 6363707464">+91 6363707464</a></p>
                         </div>
                     </div>
                     

@@ -73,7 +73,7 @@
                                                     <p class="m-2"> <span class="badge badge-dark"><?php echo $history_data['booked_date']; ?></span></p>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <p class="m-2">Rated : <span class="badge badge-dark"><?php echo $history_data['given_rating']; ?> </span></p>
+                                                    <p class="m-2">Rated : <span class="badge badge-dark"><?php echo $history_data['given_rating']== '0' ? " - " :$history_data['given_rating'] ; ?> </span></p>
                                                 </div>
                                             </div>
                                             
@@ -95,7 +95,7 @@
                                 <h5 class="card-title text-danger">Email : </h5><p class="card-text"><?php echo $data['user_email']; ?></p>
                                 <h5 class="card-title text-danger">Phone : </h5><p class="card-text"><?php echo $data['user_phone']; ?></p>
                                 <h5 class="card-title text-danger">Address : </h5><p class="card-text"><?php echo $data['user_address']; ?></p>
-                                <h5 class="card-title text-danger">Others : </h5><p class="card-text"><?php echo $data['user_email']; ?></p>
+                                <h5 class="card-title text-danger">Your ID : </h5><p class="card-text"><?php echo $data['user_id']; ?></p>
                             </div>
                         </div>
                         
@@ -133,6 +133,7 @@
                                                 </div>
                                                 <div class="col-sm-4 text-right">
                                                     <a class="btn btn-dark" href="workshop-details.php?id=<?php  echo $workshop_data['workshop_id']; ?>">Details</a>
+                                                    <button class="btn btn-dark" id="delete-button-<?php echo $workshop_data['workshop_id'];?>" onclick="remove('<?php echo $workshop_data['workshop_id'];?>', 'delete-button-<?php echo $workshop_data['workshop_id'];?>' )">Delete</button>
                                                 </div>
                                             </div>
                                             
@@ -140,6 +141,23 @@
                                     <?php }
                                     }
                                 ?> 
+                                <script type="text/javascript">
+                                    function remove(workshop, id) {
+                                    
+                                    var request = new XMLHttpRequest();
+                                    var link = "./Helpers/remove-workshop.php?id=" + workshop.toString() ;
+                                    request.open("GET",link);
+                                    request.send();
+
+                                    request.onreadystatechange = function(){
+                                        if(request.readyState == 4){
+                                            var ele = document.getElementById(id);
+                                            ele.innerText = request.responseText;
+                                        }
+                                    }
+                                }
+                                
+                            </script>
                                     <a href="rent-workshop.php" class="card btn btn-primary m-1">
                                         <div class="card-body p-2" style="border-bottom : none; ">
                                             <h5 class="card-title text-dark m-0">Rent A New Workshop</h5>

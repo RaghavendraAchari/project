@@ -83,8 +83,39 @@ require("./Helpers/admin-details.php");
                             <h5 class="card-title text-danger">Phone : </h5><p class="card-text"><?php echo $data['workshop_phone']; ?></p>
                             <h5 class="card-title text-danger">Address : </h5><p class="card-text"><?php echo $data['workshop_address']; ?></p>
                             <h5 class="card-title text-danger">Branch : </h5><p class="card-text"><?php echo $branch_name ; ?></p>
-                            <h5 class="card-title text-danger">Rating : </h5><p class="card-text"><?php echo $rating ; ?></p>
-                        </div>
+                            
+                            <?php  
+                                $w_id = $data['workshop_id'];
+                                $statement = "SELECT * FROM workshop_details WHERE workshop_id ='$w_id' ";
+                                $w_details_result = $mysqli->query($statement);
+                                $w_details_result->data_seek(0);
+                                $w_details = $w_details_result->fetch_assoc();
+
+                            ?>
+                            <div class="row">
+                                <div class="col-sm-6 pb-1">
+                                <h5 class="card-title text-danger">Rating : </h5><p class="card-text"><?php echo empty($rating) ?"Not Rated Yet" : $rating ; ?></p>
+                            
+                                </div>
+                                <div class="col-sm-6 pb-1">
+                                <h5 class="card-title text-danger">Price : </h5><p class="card-text"><?php echo $data['price'] ; ?></p>
+                                </div>
+                                <div class="col-sm-6 pb-1">
+                                    <h5 class="card-title text-danger">Basic Tools : </h5><p class="card-text"><?php echo $w_details['basic_tools'] ; ?></p>
+                                </div>
+                                <div class="col-sm-6 pb-1">
+                                <h5 class="card-title text-danger">Advanced Tools : </h5><p class="card-text"><?php echo $w_details['advanced_tools'] ; ?></p>
+                                </div>
+                                <div class="col-sm-6 pb-1">
+                                <h5 class="card-title text-danger">Area Of Workshop : </h5><p class="card-text"><?php echo $w_details['area_of_workshop'] ; ?></p>
+                                </div>
+                                <div class="col-sm-6 pb-1">
+                                <h5 class="card-title text-danger">Transport Available : </h5><p class="card-text"><?php echo $w_details['transportation_available']=='0' ? "No" : "Yes" ; ?></p>
+                                </div>
+                                
+                            </div>
+                            
+                            </div>
                     </div>
                 </div>
                     

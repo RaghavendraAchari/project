@@ -37,7 +37,7 @@ session_start();
     <div class="container-fluid">
         <header class="jumbotron pt-5 pb-4">
             <div class="header-content text-center">
-                <h1 class="display-3" >Welcome to Working Solutions</h1>
+                <h1 class="display-3" >Welcome to Workshop Rental System</h1>
                 <h2 class="display-4 bg-light">Your work is our PRIORITY</h2>
                 <h2 class="display-4"  style="padding:5px;">One platform to book or manage your WORKSHOPS</h2>
                 <p class="bg-light">Get workshop on your desired time.This is the one place to book workshops to complete your works</p>

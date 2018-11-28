@@ -123,12 +123,12 @@ if(isset($_GET['update'])){
                         </div>
                         <div class="col-sm-6 basic">
                             <label for="workshopbranch" class="mr-sm-2" >Workshop branch : <span class="text-danger">*</span></label>
-                            <select type="text"  selected="<?php echo $update ? $branch_name : "None";?>" class="form-control mb-2 mr-sm-4" id="workshopbranch" name="workshopbranch" placeholder="Select Workshop branch">
-                                <option value="None">None</option>
-                                <option value="Cyber">Cyber</option>
-                                <option value="Electrical">Electrical</option>
-                                <option value="Mechanical">Mechanical</option>
-                                <option value="Carpentry">Carpentry</option>
+                            <select type="text"   class="form-control mb-2 mr-sm-4" id="workshopbranch" name="workshopbranch" placeholder="Select Workshop branch">
+                                <option value="None" >None</option>
+                                <option value="Cyber" <?php echo $update && $branch_name=='Cyber' ? "selected" : "";?> >Cyber</option>
+                                <option value="Electrical" <?php echo $update && $branch_name=='Electrical' ? "selected" : "";?> >Electrical</option>
+                                <option value="Mechanical" <?php echo $update && $branch_name=='Mechanical' ? "selected" : "";?> >Mechanical</option>
+                                <option value="Carpentry" <?php echo $update && $branch_name=='Carpentry' ? "selected" : "";?> >Carpentry</option>
                             </select>
                         </div>
                         <div class="col-sm-12 basic">

@@ -69,7 +69,7 @@ $remove = null;
                         </div>
                         <div class="align-self-start h-25">
                             <p class="card-title mb-1 ">Price : </p>
-                            <p class="card-text mb-1 "> Rs : <b><?php echo $indrow['price']=='0'?" - " :$indrow['price'] ; ?> /-</b> </p>
+                            <p class="card-text mb-1 pb-1 "> Rs : <b><?php echo $indrow['price']=='0'?" - " :$indrow['price'] ; ?> /-</b> </p>
                         </div>
                         
                     </div>
@@ -79,7 +79,7 @@ $remove = null;
                                 <?php echo $indrow['branch_name']; ?>
                             </span>
                             <span class="badge badge-success h-50 m-2">
-                                <?php echo $indrow['workshop_rating']." / 5"; ?>
+                                <?php echo $indrow['workshop_rating']=='0' ? "- / 5" :  $indrow['workshop_rating']." / 5"; ?>
                             </span>
                         </h5>
                         <a class="btn btn-info w-100" href="<?php echo $remove==true? "./Helpers/remove-workshop.php?id=".$indrow['workshop_id']."&selection=".$selection : "booknow.php?id=".$indrow['workshop_id']; ?>"><?php echo $remove==true ? "Remove" : "Book" ; ?></a>

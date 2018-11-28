@@ -112,7 +112,7 @@
                                                         
                                                         <button class="btn btn-dark" style="overflow-x : auto; overflow-y : auto;" id="accept-button-<?php echo $workshop_data['workshop_id'];?>" onclick="accept('<?php echo $workshop_data['workshop_id'];?>', 'accept-button-<?php echo $workshop_data['workshop_id'];?>' )" >Accept</button>
                                                         
-                                                        <a class="btn btn-dark" href="">Details of workshop</a>
+                                                        <a class="btn btn-dark" href="workshop-details.php?id=<?php echo $workshop_data['workshop_id'] ; ?>">Details of workshop</a>
                                                     </div>
                                                 </div>
                                             </div>

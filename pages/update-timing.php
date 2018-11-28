@@ -17,6 +17,7 @@ session_start();
     if($tranport=='yes'){
         $trans = 1;
     }
+    echo $basic ." ". $advanced." ". $area." ".$trans ;
 
     $mon_sl1 =  $_POST['mon-sl1'];
     $mon_sl2 =  $_POST['mon-sl2'];
