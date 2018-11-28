@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 16, 2018 at 08:49 AM
+-- Generation Time: Nov 28, 2018 at 06:50 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -63,6 +63,28 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_password`, `admin_phone`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bookings`
+--
+
+DROP TABLE IF EXISTS `bookings`;
+CREATE TABLE IF NOT EXISTS `bookings` (
+  `booking_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(10) NOT NULL,
+  `workshop_id` varchar(10) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`booking_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`booking_id`, `user_id`, `workshop_id`, `date`) VALUES
+(1, 'marvel', 'sonyws2', '2018-11-28 17:36:26');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `branches`
 --
 
@@ -101,12 +123,16 @@ CREATE TABLE IF NOT EXISTS `rating` (
 --
 
 INSERT INTO `rating` (`workshop_id`, `workshop_rating`) VALUES
+('dc11', 3.9),
+('dc22', 4),
 ('dcws2', 4.6),
+('dcws3', 4.1),
+('marvel26', 4.1),
 ('marvelws2', 4.6),
 ('marvelws3', 4),
-('rahul03', 0),
-('sonyws', 4.6),
-('sonyws2', 4.2);
+('rahulws', 0),
+('sony101', 0),
+('sony102', 0);
 
 -- --------------------------------------------------------
 
@@ -132,67 +158,25 @@ CREATE TABLE IF NOT EXISTS `timing_details` (
 INSERT INTO `timing_details` (`workshop_id`, `day`, `slot1`, `slot2`, `slot3`, `slot4`) VALUES
 ('dcws2', 'Monday', 'booked', 'booked', 'available', 'available'),
 ('dcws2', 'Tuesday', 'booked', 'booked', 'available', 'available'),
-('dcws2', 'Wednesday', 'available', 'available', 'available', 'available'),
+('dcws2', 'Wednesday', 'booked', 'available', 'available', 'available'),
 ('dcws2', 'Thursday', 'available', 'available', 'available', 'available'),
 ('dcws2', 'Friday', 'available', 'available', 'available', 'available'),
-('dcws2', 'Saturday', 'available', 'available', 'available', 'available'),
+('dcws2', 'Saturday', 'available', 'booked', 'booked', 'available'),
 ('dcws2', 'Sunday', 'not-available', 'not-available', 'not-available', 'not-available'),
-('marvelws2', 'Monday', 'available', 'available', 'available', 'available'),
+('marvelws2', 'Monday', 'booked', 'booked', 'available', 'available'),
 ('marvelws2', 'Tuesday', 'booked', 'booked', 'available', 'available'),
 ('marvelws2', 'Wednesday', 'available', 'available', 'available', 'available'),
 ('marvelws2', 'Thursday', 'available', 'available', 'available', 'available'),
-('marvelws2', 'Friday', 'available', 'available', 'available', 'available'),
+('marvelws2', 'Friday', 'available', 'booked', 'booked', 'booked'),
 ('marvelws2', 'Saturday', 'available', 'available', 'available', 'available'),
 ('marvelws2', 'Sunday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Monday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Tuesday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Wednesday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Thursday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Friday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Saturday', 'available', 'available', 'available', 'available'),
-('sonyws', 'Sunday', 'available', 'available', 'available', 'available'),
-('sonyws2', 'Monday', 'booked', 'booked', 'available', 'available'),
-('sonyws2', 'Tuesday', 'available', 'available', 'available', 'available'),
-('sonyws2', 'Wednesday', 'available', 'available', 'available', 'available'),
-('sonyws2', 'Thursday', 'available', 'available', 'available', 'available'),
-('sonyws2', 'Friday', 'available', 'available', 'available', 'available'),
-('sonyws2', 'Saturday', 'available', 'available', 'available', 'available'),
-('sonyws2', 'Sunday', 'available', 'available', 'available', 'available'),
 ('marvelws3', 'Monday', 'booked', 'booked', 'available', 'not-available'),
 ('marvelws3', 'Tuesday', 'available', 'available', 'available', 'not-available'),
 ('marvelws3', 'Wednesday', 'available', 'available', 'available', 'not-available'),
 ('marvelws3', 'Thursday', 'available', 'available', 'available', 'not-available'),
-('marvelws3', 'Friday', 'available', 'available', 'available', 'not-available'),
+('marvelws3', 'Friday', 'booked', 'available', 'available', 'not-available'),
 ('marvelws3', 'Saturday', 'available', 'available', 'available', 'not-available'),
 ('marvelws3', 'Sunday', 'available', 'available', 'available', 'not-available'),
-('marvel05', 'Monday', 'available', 'available', 'available', 'available'),
-('marvel05', 'Tuesday', 'available', 'available', 'available', 'available'),
-('marvel05', 'Wednesday', 'available', 'available', 'available', 'available'),
-('marvel05', 'Thursday', 'available', 'available', 'available', 'available'),
-('marvel05', 'Friday', 'available', 'available', 'available', 'available'),
-('marvel05', 'Saturday', 'available', 'available', 'available', 'available'),
-('marvel05', 'Sunday', 'available', 'available', 'available', 'available'),
-('marvel55', 'Monday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Tuesday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Wednesday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Thursday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Friday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Saturday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Sunday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Monday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Tuesday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Wednesday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Thursday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Friday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Saturday', 'available', 'available', 'available', 'not-available'),
-('marvel55', 'Sunday', 'available', 'available', 'available', 'not-available'),
-('marvel00', 'Monday', 'available', 'available', 'available', 'available'),
-('marvel00', 'Tuesday', 'available', 'available', 'available', 'available'),
-('marvel00', 'Wednesday', 'available', 'available', 'not-available', 'available'),
-('marvel00', 'Thursday', 'available', 'available', 'not-available', 'available'),
-('marvel00', 'Friday', 'available', 'available', 'available', 'available'),
-('marvel00', 'Saturday', 'available', 'available', 'available', 'available'),
-('marvel00', 'Sunday', 'available', 'available', 'available', 'available'),
 ('dc22', 'Monday', 'available', 'available', 'available', 'available'),
 ('dc22', 'Tuesday', 'available', 'available', 'available', 'available'),
 ('dc22', 'Wednesday', 'available', 'available', 'available', 'available'),
@@ -207,13 +191,41 @@ INSERT INTO `timing_details` (`workshop_id`, `day`, `slot1`, `slot2`, `slot3`, `
 ('dc11', 'Friday', 'available', 'available', 'available', 'available'),
 ('dc11', 'Saturday', 'available', 'available', 'available', 'available'),
 ('dc11', 'Sunday', 'available', 'not-available', 'not-available', 'not-available'),
-('marvel45', 'Monday', 'available', 'available', 'available', 'not-available'),
-('marvel45', 'Tuesday', 'available', 'available', 'available', 'not-available'),
-('marvel45', 'Wednesday', 'available', 'available', 'available', 'not-available'),
-('marvel45', 'Thursday', 'available', 'available', 'available', 'not-available'),
-('marvel45', 'Friday', 'available', 'available', 'available', 'not-available'),
-('marvel45', 'Saturday', 'available', 'available', 'available', 'not-available'),
-('marvel45', 'Sunday', 'not-available', 'not-available', 'not-available', 'not-available');
+('dcws3', 'Monday', 'available', 'available', 'available', 'not-available'),
+('dcws3', 'Tuesday', 'available', 'available', 'not-available', 'not-available'),
+('dcws3', 'Wednesday', 'available', 'available', 'available', 'not-available'),
+('dcws3', 'Thursday', 'available', 'available', 'not-available', 'not-available'),
+('dcws3', 'Friday', 'available', 'available', 'available', 'not-available'),
+('dcws3', 'Saturday', 'available', 'available', 'not-available', 'not-available'),
+('dcws3', 'Sunday', 'not-available', 'not-available', 'not-available', 'not-available'),
+('marvel26', 'Monday', 'available', 'available', 'available', 'not-available'),
+('marvel26', 'Tuesday', 'available', 'available', 'available', 'not-available'),
+('marvel26', 'Wednesday', 'available', 'available', 'available', 'not-available'),
+('marvel26', 'Thursday', 'available', 'available', 'available', 'not-available'),
+('marvel26', 'Friday', 'available', 'available', 'available', 'not-available'),
+('marvel26', 'Saturday', 'available', 'available', 'available', 'not-available'),
+('marvel26', 'Sunday', 'available', 'available', 'available', 'not-available'),
+('sony101', 'Monday', 'available', 'available', 'available', 'available'),
+('sony101', 'Tuesday', 'available', 'available', 'available', 'available'),
+('sony101', 'Wednesday', 'available', 'available', 'available', 'available'),
+('sony101', 'Thursday', 'available', 'available', 'available', 'available'),
+('sony101', 'Friday', 'available', 'available', 'available', 'available'),
+('sony101', 'Saturday', 'available', 'available', 'available', 'available'),
+('sony101', 'Sunday', 'available', 'available', 'available', 'available'),
+('sony102', 'Monday', 'available', 'available', 'available', 'not-available'),
+('sony102', 'Tuesday', 'available', 'available', 'available', 'not-available'),
+('sony102', 'Wednesday', 'available', 'available', 'available', 'not-available'),
+('sony102', 'Thursday', 'available', 'available', 'available', 'not-available'),
+('sony102', 'Friday', 'available', 'available', 'available', 'not-available'),
+('sony102', 'Saturday', 'available', 'available', 'available', 'not-available'),
+('sony102', 'Sunday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Monday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Tuesday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Wednesday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Thursday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Friday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Saturday', 'available', 'available', 'available', 'not-available'),
+('rahulws', 'Sunday', 'available', 'available', 'available', 'not-available');
 
 -- --------------------------------------------------------
 
@@ -238,12 +250,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_fname`, `user_lname`, `user_phone`, `user_email`, `user_address`, `user_password`) VALUES
-('', '', '', '', '', '', ''),
 ('dc', 'DC', 'comics', '6565656566', 'dc@dc.com', '#89/5, Malya Street,1st main,RR nagar, Bengaluru - 560089', 'dc'),
 ('marvel', 'Marvel', 'Studios', '7575757', 'marvel@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', 'marvel'),
 ('paramount', 'Paramount', 'Studios', '7465487457', 'para@paramount.com', '#112, Dr.Rajkumar Road, MariyappanPalya, Bengaluru, 560344', 'paramount'),
-('rahul', 'rahul', 'raju', '6754545454', 'raghahgagga@faga.com', 'udhfkushdfukes', 'rahul'),
+('rahul', 'Rahul', 'Raju', '6754545454', 'rahul.raju@gmail.com', '#23, 2nd stage, Nelmangala, Bangalore - 560789', 'rahul'),
 ('rahul02', 'rahul', '', '7676765765', 'htff@ghg.cm', 'hggfytfyt', 'rahul02'),
+('sanath91', 'sanath', 's', '7575757565', 'sanath@gmail.com', '#111 rajajinagar bangalore-10', 'sanath91'),
 ('sony', 'Sony', 'Universe', '8989898989', 'sony@sony.com', '#234, Gandhi Street, JP nagar, Bengaluru - 560078', 'sony');
 
 -- --------------------------------------------------------
@@ -268,15 +280,27 @@ CREATE TABLE IF NOT EXISTS `user_history` (
 --
 
 INSERT INTO `user_history` (`user_id`, `workshop_id`, `booked_date`, `payed_by`, `given_rating`) VALUES
-('marvel', 'sonyws', '2018-11-11 16:23:52', '', 5),
 ('marvel', 'dcws2', '2018-11-11 16:23:59', '', 0),
-('dc', 'sonyws2', '2018-11-16 08:26:44', 'paytm', 0),
-('', 'sonyws2', '2018-11-16 08:27:23', 'paytm', 0),
-('', 'sonyws2', '2018-11-16 08:27:56', 'paytm', 0),
 ('marvel', 'marvelws3', '2018-11-16 08:28:40', 'paytm', 0),
 ('marvel', 'marvelws2', '2018-11-16 08:30:36', 'Debit', 0),
 ('marvel', 'dcws2', '2018-11-16 08:32:49', 'paytm', 0),
-('marvel', 'dcws2', '2018-11-16 08:44:48', 'Credit', 0);
+('marvel', 'dcws2', '2018-11-16 08:44:48', 'Credit', 0),
+('dc', 'marvelws3', '2018-11-16 09:08:46', 'paytm', 0),
+('sanath91', 'marvelws2', '2018-11-20 01:58:18', 'paytm', 0),
+('dc', 'dcws2', '2018-11-20 04:10:33', 'paytm', 0),
+('dc', 'dcws2', '2018-11-20 04:11:07', 'paytm', 0),
+('dc', 'dcws2', '2018-11-20 04:11:24', 'paytm', 0),
+('sony', 'marvelws2', '2018-11-27 18:39:36', 'paytm', 0),
+('rahul', 'dcws2', '2018-11-27 18:40:18', 'paytm', 0);
+
+--
+-- Triggers `user_history`
+--
+DROP TRIGGER IF EXISTS `on_booking`;
+DELIMITER $$
+CREATE TRIGGER `on_booking` AFTER INSERT ON `user_history` FOR EACH ROW INSERT INTO `bookings` VALUES(null , NEW.user_id, NEW.workshop_id, NEW.booked_date)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -300,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `workshop` (
   KEY `branch` (`Workshop_branch_id`),
   KEY `user` (`workshop_user_id`),
   KEY `no` (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `workshop`
@@ -310,15 +334,22 @@ INSERT INTO `workshop` (`no`, `workshop_id`, `workshop_name`, `workshop_phone`, 
 (37, 'dc11', 'DC WS', '9998887776', 'dc@dc.com', '#111, BTM layout, Jayanagar, Bengaluru -560033', '3', 'dc', 500, 1),
 (39, 'dc22', 'DC WS 2', '7575757585', 'dc@dc.com', '#111, BTM layout, Jayanagar, Bengaluru -560033', '2', 'dc', 500, 1),
 (1, 'dcws2', 'DC', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '2', 'dc', 300, 1),
-(36, 'marvel00', 'marvels', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560044', '2', 'marvel', 500, 1),
-(16, 'marvel05', 'marvels', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '1', 'marvel', 500, 1),
-(40, 'marvel45', 'marvels', '7575757585', 'marvel45@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560044', '1', 'marvel', 600, 1),
-(35, 'marvel55', 'marvels', '3434343434', 'sasd@saads.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '4', 'marvel', 500, 1),
+(41, 'dcws3', 'DC Workshop', '9878998767', 'dc@dc.com', '#111 rajajinagar bangalore-10', '3', 'dc', 490, 1),
+(42, 'marvel26', 'marvel workshop', '87897689', 'marvel26@marvel.com', '#12, peenya 2nd stage, bangalore - 560098', '2', 'marvel', 390, 0),
 (3, 'marvelws2', 'marvels', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '3', 'marvel', 350, 1),
 (4, 'marvelws3', 'marvels', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '2', 'marvel', 370, 1),
-(15, 'rahul03', 'rahul Workshop', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '3', 'rahul', 0, 1),
-(6, 'sonyws', 'Sony', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '4', 'sony', 420, 1),
-(7, 'sonyws2', 'Sony', '7575757585', 'marvel1@marvel.com', '#111, BTM layout, Jayanagar, Bengaluru -560022', '1', 'sony', 390, 1);
+(46, 'rahulws', 'Rahul WS', '8934523451', 'rahul@rahul.com', '#23,Nelmangala, Bangalore - 560456', '1', 'rahul', 200, 0),
+(44, 'sony101', 'Sony Workshop', '8796574567', 'sony101@sony.com', '#111 Rajajinagar ,  Bangalore-10', '2', 'sony', 500, 0),
+(45, 'sony102', 'Sony Workshop', '7575757533', 'sony102@sony.com', '#23, 2nd stage, Peenya ,Bangalore - 560789', '3', 'sony', 490, 0);
+
+--
+-- Triggers `workshop`
+--
+DROP TRIGGER IF EXISTS `on_rent`;
+DELIMITER $$
+CREATE TRIGGER `on_rent` AFTER INSERT ON `workshop` FOR EACH ROW INSERT INTO rating VALUES (NEW.workshop_id,0)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -343,11 +374,12 @@ CREATE TABLE IF NOT EXISTS `workshop_details` (
 INSERT INTO `workshop_details` (`workshop_id`, `basic_tools`, `advanced_tools`, `area_of_workshop`, `transportation_available`) VALUES
 ('dc11', 44, 33, 450, 0),
 ('dc22', 50, 20, 200, 1),
-('marvel00', 30, 30, 400, 1),
-('marvel05', 30, 30, 400, 1),
-('marvel45', 44, 20, 1000, 0),
-('marvel55', 40, 20, 400, 1),
-('marvelws3', 40, 20, 50, 1);
+('dcws3', 40, 20, 400, 0),
+('marvel26', 66, 20, 560, 0),
+('marvelws3', 40, 20, 50, 1),
+('rahulws', 30, 5, 200, 0),
+('sony101', 30, 30, 400, 1),
+('sony102', 56, 10, 660, 0);
 
 --
 -- Constraints for dumped tables
