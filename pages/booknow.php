@@ -91,7 +91,7 @@ require("./Helpers/admin-details.php");
                                 <h5 class="card-title text-danger">Area Of Workshop : </h5><p class="card-text"><?php echo $w_details['area_of_workshop'] ; ?></p>
                                 </div>
                                 <div class="col-sm-6 pb-1">
-                                <h5 class="card-title text-danger">Transport Available : </h5><p class="card-text"><?php echo $w_details['transportation_available']=='0' ? "No" : "Yes" ; ?></p>
+                                <h5 class="card-title text-danger">Transportation Available : </h5><p class="card-text"><?php echo $w_details['transportation_available']=='0' ? "No" : "Yes" ; ?></p>
                                 </div>
                                 
                             </div></div>

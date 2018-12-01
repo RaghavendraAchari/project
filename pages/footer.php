@@ -25,12 +25,13 @@
                             
                             <h3 id="about-us"class="text-white">About us</h3>
                             <p class="mb-3 text-light" style="font-size : 1.4rem ;">Workshop Rental System</p>
+                            <p class="text-white mb-0">E-mail : </p>
+                            <p class="text-white mb-0"><a class="text-white ml-3"  href="mailto:raghav.achari.l@gmail.com">raghav.achari.l@gmail.com</a> <br> <a class=" ml-3 text-white" href="mailto:rameshjithan97@gmail.com">rameshjithan97@gmail.com</a></p>
                             
-                            <p class="text-white mb-0">Raghavendra & Ramesh</p>
-                            <p class="text-white mb-0">#193/3, 1st main, Pipeline Road,</p>
-                            <p class="text-white mb-0">WOC, Rajajinagar, Bangalore - 560086</p>
-                            <p class="text-white mb-0">E-mail : <a class="text-white"  href="mailto:raghav.achari.l@gmail.com">raghav.achari.l@gmail.com</a> (or) <a class="text-white" href="mailto:ramesh.v@gmail.com">ramesh.v@gmail.com</a></p>
-                            <p class="text-white mb-0">Phone : <a class="text-white" href="tel:+91 9731453933">+91 9731453933</a> (or) <a class="text-white" href="tel:+91 6363707464">+91 6363707464</a></p>
+                            <p class="text-white mb-0">Phone :</p>
+                            <p class="text-white mb-0"><a class="text-white ml-3" href="tel:+91 9731453933">+91 9731453933</a> <br> <a class="text-white  ml-3" href="tel:+91 6363707464">+91 6363707464</a></p>
+
+                            
                         </div>
                     </div>
                     
