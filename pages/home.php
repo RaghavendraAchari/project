@@ -22,9 +22,6 @@ session_start();
 </head>
 <body>
     <?php require("navigation.php"); ?>
-    <?php 
-    
-    ?>
     <script type="text/javascript">
         var ele = document.getElementById('home-link');
         ele.className +=' active';
@@ -35,17 +32,28 @@ session_start();
     </script>
 
     <div class="container-fluid">
-        <header class="jumbotron pt-5 pb-4">
+    <header class="jumbotron">
             <div class="header-content text-center">
-                <h1 class="display-3" >Welcome to Workshop Rental System</h1>
-                <h2 class="display-4 bg-light">Your work is our PRIORITY</h2>
-                <h2 class="display-4"  style="padding:5px;">One platform to book or manage your WORKSHOPS</h2>
-                <p class="bg-light">Get workshop on your desired time.This is the one place to book workshops to complete your works</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="display-3" style="font-size:7vw;" >Welcome to Working Solutions</h1>
+                    </div>
+                
+                <div class="col-md-12">
+                    <h2 class="display-4 bg-light" style="font-size:4.3vw;">Your work is our PRIORITY</h2>
+                </div>
+                
+                <div class="col-md-12">
+                    <h2 class="display-4"  style="padding:5px; font-size:4vw;">One platform to book or manage your WORKSHOPS</h2>
+                </div>
+                </div>
+            
+                <p class="bg-light" style="font-size:2.9vw;">Get workshop on your desired time.This is the one place to book workshops to complete your works</p>
             </div>
         </header>
         
         <div class="row deck bg-light">
-            <div class="col-lg-3 pl-5 pr-5">
+            <div class="col-lg-3 pl-5 pr-5 mb-2">
                 <div class="card  h-100  bg-light" >
                     <img class="card-img-top"  src="./Icons/search-icon4.png" alt="card-image"/>
                     <div class="card-body">
@@ -55,7 +63,7 @@ session_start();
                     <div class="card-footer"><a class="card-link btn btn-info text-white" href="search-workshop.php">Go To Search</a></div>
                 </div> 
             </div>
-            <div class="col-lg-3 pl-5 pr-5">
+            <div class="col-lg-3 pl-5 pr-5 mb-2">
                 <div class="card h-100 bg-light" >
                     <img class="card-img-top"  src="./Icons/book-icon2.png" alt="card-image"/>
                     <div class="card-body">
@@ -65,7 +73,7 @@ session_start();
                     <div class="card-footer"><a class="card-link btn btn-info" href="book-workshop.php">Book Now</a></div>  
                 </div>     
             </div>
-            <div class="col-lg-3 pl-5 pr-5">
+            <div class="col-lg-3 pl-5 pr-5 mb-2">
                 <div class="card h-100 bg-light" >
                     <img class="card-img-top"  src="./Icons/rent-icon2.png" alt="card-image"/>
         
@@ -77,7 +85,7 @@ session_start();
                     <div class="card-footer"><a class="card-link btn btn-info" href="rent-workshop.php">Rent</a></div>
                 </div>
             </div>
-            <div class="col-lg-3 pl-5 pr-5" >
+            <div class="col-lg-3 pl-5 pr-5 mb-2" >
                 <div class="card h-100 bg-light" >
                     <img class="card-img-top"  src="./Icons/user-login-icon2.png" alt="card-image"/>
                     <div class="card-body">
