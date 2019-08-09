@@ -4,34 +4,7 @@
         $_SESSION["user_fname"]=null;
     }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>log in</title>
-        <link href="./CSS/login-style.css" type="text/css" rel="stylesheet"/>
-        <script type="text/javascript">
-            function checkForm(form) {
-                if(form.username.value == ""){
-                    form.username.focus();
-                    form.username.setAttribute("placeholder","Enter a valid user name");
-                    return false;
-                }
-                if(form.pswd.value == ""){
-                    form.pswd.focus();
-                    form.username.setAttribute("placeholder","Enter password");
-                    return false;
-                }
-                return true;
-            }
-        </script>
-    </head>
-
-    <body>
-        <div class="outer-box">
-            <div class="middle">
-                <div class="inner-box">
-                                <?php 
+<?php 
                         
                         if(isset($_POST["submit"])){
                             $user =$_POST["username"];
@@ -81,6 +54,33 @@
                         }
                         if(true) {
                             ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>log in</title>
+        <link href="./CSS/login-style.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript">
+            function checkForm(form) {
+                if(form.username.value == ""){
+                    form.username.focus();
+                    form.username.setAttribute("placeholder","Enter a valid user name");
+                    return false;
+                }
+                if(form.pswd.value == ""){
+                    form.pswd.focus();
+                    form.username.setAttribute("placeholder","Enter password");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="outer-box">
+            <div class="middle">
+                <div class="inner-box">
+                                
                             <form action="login.php" method="POST" onsubmit="return checkForm(this);">
                                 <div class="heading">
                                     <h2>Log in</h2>
